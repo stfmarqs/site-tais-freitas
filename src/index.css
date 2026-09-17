@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-slab: "Zilla Slab", Georgia, serif;
+  --font-sans: "Poppins", system-ui, -apple-system, sans-serif;
+
+  --color-charcoal: #3B3732;
+  --color-charcoal-dark: #23201D;
+  --color-charcoal-muted: #524D46;
+  --color-peach: #FDBA74;
+  --color-peach-light: #FED7AA;
+  --color-terracotta: #D97736;
+  --color-terracotta-dark: #B45B23;
+  --color-cream: #FAF8F5;
+  --color-warm-gray: #F1F1F1;
+}
+
+html {
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D0C9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B8B2A8;
+}
+
+/* Micro-animations inspired by OriginKit / Cult UI */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
