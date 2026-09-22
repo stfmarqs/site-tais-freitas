@@ -1,0 +1,17 @@
+# Cloudflare Pages / Netlify. A Vercel usa vercel.json (mesmas regras).
+
+# Bundles com hash no nome: o conteúdo nunca muda, cache longo e imutável.
+/assets/index-*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagens vindas de public/: o nome não tem hash, então revalida —
+# mas serve do cache enquanto revalida, para não penalizar conexão ruim.
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useCallback, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SpecialtiesBento from './components/SpecialtiesBento';
@@ -7,48 +7,46 @@ import ProcessVisualLaw from './components/ProcessVisualLaw';
 import AboutSection from './components/AboutSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
-import DigitalCardModal from './components/DigitalCardModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
+// O modal arrasta a biblioteca de QR Code junto. Como ele só abre por ação do
+// usuário, fica fora do bundle inicial — o que o visitante baixa para ler a
+// página não inclui código de gerar QR.
+const DigitalCardModal = lazy(() => import('./components/DigitalCardModal'));
+
 export default function App() {
-  const [cardModalOpen, setCardModalOpen] = useState(false);
+  const [cartaoAberto, setCartaoAberto] = useState(false);
+  // Uma vez montado, o modal permanece: é o que preserva a animação de saída.
+  const [cartaoMontado, setCartaoMontado] = useState(false);
+
+  const abrirCartao = useCallback(() => {
+    setCartaoMontado(true);
+    setCartaoAberto(true);
+  }, []);
+
+  const fecharCartao = useCallback(() => setCartaoAberto(false), []);
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#3B3732] flex flex-col font-sans selection:bg-[#FDBA74] selection:text-[#3B3732]">
-      {/* Navigation Header */}
-      <Header onOpenCardModal={() => setCardModalOpen(true)} />
+    <div className="flex min-h-screen flex-col bg-cream font-sans text-charcoal">
+      <Header onOpenCardModal={abrirCartao} />
 
-      {/* Main Content Sections */}
       <main className="flex-1">
-        {/* Hero Section */}
-        <Hero onOpenCardModal={() => setCardModalOpen(true)} />
-
-        {/* Specialties Bento Grid */}
+        <Hero onOpenCardModal={abrirCartao} />
         <SpecialtiesBento />
-
-        {/* Interactive Intake & Eligibility Simulator */}
         <IntakeDiagnostic />
-
-        {/* Visual Law 3-Step Process */}
         <ProcessVisualLaw />
-
-        {/* About Dra. Taís Freitas */}
-        <AboutSection onOpenCardModal={() => setCardModalOpen(true)} />
-
-        {/* FAQ Accordion */}
+        <AboutSection onOpenCardModal={abrirCartao} />
         <FaqSection />
       </main>
 
-      {/* Ethical Footer & Pre-Footer Banner */}
-      <Footer onOpenCardModal={() => setCardModalOpen(true)} />
+      <Footer onOpenCardModal={abrirCartao} />
 
-      {/* Digital Business Card Modal */}
-      <DigitalCardModal 
-        isOpen={cardModalOpen} 
-        onClose={() => setCardModalOpen(false)} 
-      />
+      {cartaoMontado && (
+        <Suspense fallback={null}>
+          <DigitalCardModal isOpen={cartaoAberto} onClose={fecharCartao} />
+        </Suspense>
+      )}
 
-      {/* Floating Consultative WhatsApp Widget */}
       <FloatingWhatsApp />
     </div>
   );

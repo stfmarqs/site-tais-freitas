@@ -5,12 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#3B3732" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
-    <title>Dra. Taís Freitas | Advocacia Previdenciária & Consumidor — OAB/MT 23.396</title>
-    <meta name="description" content="Atuação em Direito Previdenciário (aposentadorias, BPC/LOAS, auxílios) e Direito do Consumidor (direito aéreo e fraudes bancárias). Dra. Taís Freitas, OAB/MT 23.396, Cuiabá - MT." />
 
-    <!-- Fontes: Playfair Display (display) + Poppins (texto).
-         Carregadas sem bloquear o primeiro render — se o Google Fonts demorar,
-         a página aparece assim mesmo com a fonte de sistema. -->
+    <title>Dra. Taís Freitas | Advocacia Previdenciária e do Consumidor — OAB/MT 23.396</title>
+    <meta
+      name="description"
+      content="Advogada em Cuiabá-MT com atuação em Direito Previdenciário (aposentadorias, BPC/LOAS, auxílios por incapacidade, revisões) e Direito do Consumidor (direito aéreo, fraudes bancárias e negativação indevida). OAB/MT 23.396."
+    />
+    <meta name="author" content="Dra. Taís Freitas" />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <!-- Open Graph: sem isto o link colado no WhatsApp, que é o canal principal
+         do site, aparece como texto puro e sem prévia. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Dra. Taís Freitas Advocacia" />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:title" content="Dra. Taís Freitas | Advocacia Previdenciária e do Consumidor" />
+    <meta
+      property="og:description"
+      content="Atuação em benefícios do INSS (aposentadorias, BPC/LOAS, auxílios) e em relações de consumo. OAB/MT 23.396 — Cuiabá-MT, atendimento em todo o Brasil."
+    />
+    <meta property="og:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dra. Taís Freitas, advogada — OAB/MT 23.396" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dra. Taís Freitas | Advocacia Previdenciária e do Consumidor" />
+    <meta
+      name="twitter:description"
+      content="Atuação em benefícios do INSS e em relações de consumo. OAB/MT 23.396 — Cuiabá-MT."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
+
+    <!-- Dados estruturados. Sem aggregateRating nem review: depoimento e nota de
+         cliente são vedados pelo Provimento 205/2021 da OAB. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Attorney",
+        "@id": "%VITE_SITE_URL%/#advogada",
+        "name": "Dra. Taís Freitas",
+        "url": "%VITE_SITE_URL%/",
+        "image": "%VITE_SITE_URL%/assets/og-image.jpg",
+        "description": "Advogada com atuação em Direito Previdenciário e Direito do Consumidor.",
+        "telephone": "+55-65-99356-8303",
+        "email": "contato@indenizacaocerta.com.br",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cuiabá",
+          "addressRegion": "MT",
+          "addressCountry": "BR"
+        },
+        "areaServed": { "@type": "Country", "name": "Brasil" },
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Inscrição OAB",
+          "value": "OAB/MT 23.396"
+        },
+        "sameAs": ["https://www.instagram.com/adv_taisdepaula"],
+        "knowsAbout": [
+          "Direito Previdenciário",
+          "Aposentadoria por idade",
+          "Aposentadoria por tempo de contribuição",
+          "BPC/LOAS",
+          "Auxílio por incapacidade temporária",
+          "Pensão por morte",
+          "Revisão de benefício do INSS",
+          "Direito do Consumidor",
+          "Direito aéreo do passageiro",
+          "Fraude bancária"
+        ],
+        "knowsLanguage": "pt-BR"
+      }
+    </script>
+
+    <!-- Fontes fora do caminho crítico: se o Google Fonts demorar, a página
+         aparece assim mesmo com a fonte de sistema. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
