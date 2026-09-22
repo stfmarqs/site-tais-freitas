@@ -160,7 +160,7 @@ export default function Header({ onOpenCardModal }) {
                 className="flex w-full items-center justify-center gap-2 rounded-field bg-charcoal px-4 py-3 text-xs font-semibold text-white transition-colors duration-200 hover:bg-charcoal-deep"
               >
                 <MessageCircle size={16} className="text-peach" aria-hidden="true" />
-                <span>Conversar com a Especialista</span>
+                <span>Falar com a advogada</span>
               </a>
             </div>
           </div>

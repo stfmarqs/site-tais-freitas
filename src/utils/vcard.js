@@ -11,7 +11,7 @@ TITLE:Advogada | OAB/MT 23.396
 TEL;TYPE=CELL,VOICE,pref:+5565993568303
 EMAIL:contato@indenizacaocerta.com.br
 X-SOCIALPROFILE;type=instagram:https://instagram.com/adv_taisdepaula
-NOTE:Especialista em Direito Previdenciário e Direito do Consumidor. OAB/MT 23.396. Atendimento consultivo e humanizado.
+NOTE:Advogada. Atuação em Direito Previdenciário e Direito do Consumidor. OAB/MT 23.396.
 END:VCARD`;
 
   const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });

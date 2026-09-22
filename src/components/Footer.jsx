@@ -52,7 +52,7 @@ export default function Footer({ onOpenCardModal }) {
               className="inline-flex w-full items-center justify-center gap-2.5 rounded-field bg-peach px-7 py-4 text-xs font-bold uppercase tracking-[0.1em] text-charcoal-dark transition-colors duration-200 ease-out-quint hover:bg-peach-light sm:w-auto"
             >
               <MessageCircle size={18} aria-hidden="true" />
-              <span>Falar no WhatsApp Agora</span>
+              <span>Falar no WhatsApp</span>
             </a>
 
             <button
@@ -88,7 +88,7 @@ export default function Footer({ onOpenCardModal }) {
                   Taís Freitas
                 </span>
                 <span className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.14em] text-peach">
-                  Advocacia Especializada • {CONTACT_INFO.oab}
+                  Advocacia • {CONTACT_INFO.oab}
                 </span>
               </span>
             </div>

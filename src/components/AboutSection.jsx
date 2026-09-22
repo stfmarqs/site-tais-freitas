@@ -55,7 +55,7 @@ export default function AboutSection({ onOpenCardModal }) {
                 <div className="absolute inset-x-4 bottom-4 rounded-surface border border-rule bg-white/95 p-4 backdrop-blur-md">
                   <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] text-charcoal">
                     <GraduationCap size={16} className="text-terracotta" aria-hidden="true" />
-                    Pós-Graduação Especializada
+                    Pós-Graduação em Previdenciário
                   </p>
                   <p className="mt-1 text-xs text-charcoal-muted">
                     Dedicação contínua ao Direito Previdenciário e defesa do consumidor.

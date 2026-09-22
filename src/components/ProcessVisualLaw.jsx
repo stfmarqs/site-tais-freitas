@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/vcard';
 
 export default function ProcessVisualLaw() {
@@ -9,19 +9,19 @@ export default function ProcessVisualLaw() {
       title: "Triagem & Análise Documental",
       subtitle: "Diagnóstico inicial sem juridiquês",
       description: "Você nos envia a documentação pelo WhatsApp ou e-mail (extrato do CNIS, carteiras de trabalho, laudos médicos, bilhetes de voo ou comprovantes bancários). Realizamos uma auditoria minuciosa para verificar os requisitos legais.",
-      deliverables: ["Conferência de vínculos e contribuições", "Identificação imediata de pendências", "Avaliação da urgência do caso"]
+      deliverables: ["Conferência de vínculos e contribuições", "Identificação de pendências", "Avaliação da urgência do caso"]
     },
     {
       number: "02",
       title: "Estratégia & Enquadramento Claro",
       subtitle: "Transparência total antes de agir",
-      description: "Apresentamos um parecer técnico objetivo explicando exatamente o seu direito, as regras aplicáveis e a rota mais eficiente (via administrativa no INSS/órgão competente ou ação judicial especializada).",
-      deliverables: ["Simulação de prazos e cenários", "Explicação didática dos direitos garantidos", "Contrato de honorários ético e transparente"]
+      description: "Apresentamos um parecer técnico objetivo explicando exatamente o seu direito, as regras aplicáveis e a via cabível (administrativa no INSS/órgão competente ou judicial).",
+      deliverables: ["Simulação de prazos e cenários", "Explicação didática das regras aplicáveis ao caso"]
     },
     {
       number: "03",
-      title: "Atuação Eficaz & Acompanhamento",
-      subtitle: "Compromisso até a resolução",
+      title: "Execução & Acompanhamento",
+      subtitle: "Acompanhamento em todas as fases",
       description: "Executamos todos os protocolos, recursos e defesas com celeridade técnica. Você recebe informativos periódicos sobre o andamento do seu processo, sem ficar no escuro em nenhum momento.",
       deliverables: ["Protocolo administrativo ou judicial ágil", "Comunicação direta com a advogada", "Cobrança de cumprimento de decisões"]
     }
@@ -106,59 +106,42 @@ export default function ProcessVisualLaw() {
           ))}
         </div>
 
-        {/* Visual Law Contrast Card: Tradicional vs. Moderno */}
+        {/* Como o atendimento funciona.
+            Substitui o antigo quadro "Advocacia Tradicional ✕ vs Dra. Taís ✓":
+            comparação que deprecia outros profissionais é vedada pelo Código de
+            Ética da OAB. Os fatos sobre o atendimento seguem aqui, sem o contraste. */}
         <div className="mt-16 p-8 rounded-shell bg-cream border border-rule">
-          <h4 className="font-serif text-xl font-semibold text-charcoal text-center mb-6">
-            A diferença de uma advocacia centrada no constituinte
+          <h4 className="font-serif text-xl font-semibold text-charcoal text-center mb-2">
+            Como o atendimento funciona na prática
           </h4>
+          <p className="mx-auto mb-8 max-w-[56ch] text-center text-xs text-charcoal-muted">
+            Três características do trabalho, para você saber o que esperar antes do primeiro contato.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* O modelo antigo */}
-            <div className="p-6 rounded-surface bg-white border border-rule text-left space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal-muted">
-                <ShieldAlert size={16} />
-                Advocacia Tradicional Burocrática
-              </div>
-              <ul className="space-y-2 text-xs text-charcoal-muted">
-                <li className="flex items-start gap-2">
-                  <span className="text-charcoal-muted/70 font-bold">✕</span>
-                  Termos e jargões jurídicos incompreensíveis que causam angústia
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-charcoal-muted/70 font-bold">✕</span>
-                  Dificuldade de contato e semanas sem retorno sobre o processo
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-charcoal-muted/70 font-bold">✕</span>
-                  Exigência de deslocamentos físicos desnecessários para assinar papéis
-                </li>
-              </ul>
-            </div>
-
-            {/* O modelo Dra. Taís Freitas */}
-            <div className="p-6 rounded-surface bg-white border border-charcoal text-left space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-charcoal">
-                <CheckCircle2 size={16} />
-                Com a Dra. Taís Freitas
-              </div>
-              <ul className="space-y-2 text-xs text-charcoal-muted font-medium">
-                <li className="flex items-start gap-2">
-                  <span className="text-terracotta font-bold">✓</span>
-                  Linguagem direta, transparente e orientada à solução do seu problema
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-terracotta font-bold">✓</span>
-                  Comunicação ágil pelo WhatsApp e atualizações didáticas de cada fase
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-terracotta font-bold">✓</span>
-                  Assinatura digital segura e envio de documentos pelo celular sem sair de casa
-                </li>
-              </ul>
-            </div>
-
-          </div>
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {[
+              {
+                titulo: 'Linguagem sem juridiquês',
+                texto: 'Cada etapa é explicada em português comum, incluindo o que ainda não se sabe sobre o caso.',
+              },
+              {
+                titulo: 'Contato direto pelo WhatsApp',
+                texto: 'As atualizações de andamento chegam pelo mesmo canal em que você fala com a advogada.',
+              },
+              {
+                titulo: 'Documentos pelo celular',
+                texto: 'Procuração e contrato por assinatura eletrônica com validade jurídica (ICP-Brasil/Gov.br).',
+              },
+            ].map((item) => (
+              <li key={item.titulo} className="p-6 rounded-surface bg-white border border-rule text-left">
+                <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta">
+                  <CheckCircle2 size={16} aria-hidden="true" />
+                </span>
+                <p className="text-xs font-bold text-charcoal">{item.titulo}</p>
+                <p className="mt-1 text-xs leading-relaxed text-charcoal-muted">{item.texto}</p>
+              </li>
+            ))}
+          </ul>
         </div>
 
       </div>

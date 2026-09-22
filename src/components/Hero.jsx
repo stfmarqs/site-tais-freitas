@@ -40,10 +40,10 @@ export default function Hero({ onOpenCardModal }) {
             </h1>
 
             <p className="max-w-[62ch] text-lede text-charcoal-muted">
-              Atendimento especializado e humanizado com a{' '}
+              Atendimento técnico e humanizado com a{' '}
               <strong className="font-semibold text-charcoal">Dra. Taís Freitas</strong>.
-              Garantimos a proteção da sua aposentadoria no INSS e a justa reparação perante
-              cancelamentos de voos, fraudes bancárias e relações de consumo.
+              Atuação em concessão, revisão e planejamento de benefícios do INSS e em casos de
+              cancelamento de voos, fraudes bancárias e relações de consumo.
             </p>
 
             {/* Pontos de confiança */}
@@ -127,7 +127,7 @@ export default function Hero({ onOpenCardModal }) {
 
                 <div className="absolute inset-x-5 bottom-5 text-left text-white">
                   <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-peach">
-                    Advocacia Especializada
+                    Direito Previdenciário
                   </div>
                   <div className="font-serif text-xl font-bold tracking-tight">Dra. Taís Freitas</div>
                   <div className="mt-0.5 text-xs font-light text-white/75">
@@ -142,7 +142,7 @@ export default function Hero({ onOpenCardModal }) {
                   <ShieldCheck size={16} aria-hidden="true" />
                 </div>
                 <div className="text-[11px] font-bold leading-tight text-charcoal">
-                  Especialista em INSS
+                  Direito Previdenciário
                 </div>
                 <div className="mt-0.5 text-[10px] leading-snug text-charcoal-muted">
                   Planejamento, concessão e revisões de aposentadoria

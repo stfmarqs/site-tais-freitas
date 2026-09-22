@@ -354,7 +354,7 @@ Gostaria de agendar uma análise preliminar com a senhora.`;
 
         <p className="mt-4 text-center text-[11px] text-charcoal-muted/80">
           Conforme Provimento 205/2021 da OAB: as respostas acima servem exclusivamente para
-          direcionamento técnico prévio, garantindo sigilo e pessoalidade.
+          direcionamento técnico prévio. As informações são tratadas sob sigilo profissional.
         </p>
 
       </div>

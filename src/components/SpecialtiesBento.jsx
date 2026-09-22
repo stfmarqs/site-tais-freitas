@@ -9,15 +9,15 @@ export default function SpecialtiesBento() {
     {
       title: "Planejamento Previdenciário",
       badge: "Prevenção & Economia",
-      description: "Estudo analítico e matemático de todo o seu histórico de contribuições. Identificação da data exata e da melhor regra de transição pós-Reforma para alcançar o valor máximo de aposentadoria.",
-      situations: ["Simulação de regras de transição", "Projeção do teto e melhor benefício", "Correção prévia de divergências no CNIS"],
+      description: "Estudo analítico e matemático de todo o seu histórico de contribuições. Identificação das regras de transição aplicáveis ao seu histórico após a Reforma.",
+      situations: ["Simulação de regras de transição", "Comparação entre as regras de transição aplicáveis", "Correção prévia de divergências no CNIS"],
       ctaText: "Analisar meu histórico",
-      whatsappMsg: "Olá, Dra. Taís. Gostaria de realizar um Planejamento Previdenciário para entender a melhor data e valor para minha aposentadoria."
+      whatsappMsg: "Olá, Dra. Taís. Gostaria de realizar um Planejamento Previdenciário para entender as regras de transição aplicáveis ao meu caso."
     },
     {
       title: "Concessão de Aposentadorias",
       badge: "Carro-Chefe",
-      description: "Acompanhamento integral do pedido administrativo e judicial para aposentadoria por idade, tempo de contribuição, aposentadoria da pessoa com deficiência e aposentadoria especial.",
+      description: "Acompanhamento do pedido administrativo e judicial para aposentadoria por idade, tempo de contribuição, aposentadoria da pessoa com deficiência e aposentadoria especial.",
       situations: ["Aposentadoria por Idade Urbana e Rural", "Tempo Especial (Insalubridade/Periculosidade)", "Desbloqueio de pendências no Meu INSS"],
       ctaText: "Verificar requisitos de aposentadoria",
       whatsappMsg: "Olá, Dra. Taís. Gostaria de verificar se já preencho os requisitos para solicitar minha aposentadoria pelo INSS."
@@ -25,7 +25,7 @@ export default function SpecialtiesBento() {
     {
       title: "Benefícios por Incapacidade",
       badge: "Saúde & Proteção",
-      description: "Amparo legal para trabalhadores acometidos por doenças ou acidentes que os impeçam de exercer sua atividade habitual. Atuação assertiva contra laudos desfavoráveis de perícias.",
+      description: "Amparo legal para trabalhadores acometidos por doenças ou acidentes que os impeçam de exercer sua atividade habitual. Atuação nos casos de laudo pericial desfavorável.",
       situations: ["Auxílio por Incapacidade Temporária (Auxílio-Doença)", "Aposentadoria por Invalidez Permanente", "Auxílio-Acidente e Reabilitação Profissional"],
       ctaText: "Consultar benefício por incapacidade",
       whatsappMsg: "Olá, Dra. Taís. Estou afastado por motivo de saúde e tive meu benefício por incapacidade negado pelo INSS."
@@ -33,7 +33,7 @@ export default function SpecialtiesBento() {
     {
       title: "BPC / LOAS (Benefício Assistencial)",
       badge: "Direito Social",
-      description: "Garantia de 1 salário mínimo mensal para idosos acima de 65 anos ou pessoas com deficiência de qualquer idade em situação de vulnerabilidade, mesmo sem nunca ter contribuído ao INSS.",
+      description: "O BPC/LOAS prevê 1 salário mínimo mensal a pessoas com 65 anos ou mais, ou com deficiência de qualquer idade, em situação de vulnerabilidade, atendidos os requisitos legais — mesmo sem nunca ter contribuído ao INSS.",
       situations: ["Idosos a partir de 65 anos sem renda", "Pessoas com deficiência e impedimentos de longo prazo", "Análise do critério de renda familiar e CadÚnico"],
       ctaText: "Consultar elegibilidade BPC/LOAS",
       whatsappMsg: "Olá, Dra. Taís. Gostaria de saber se minha família tem direito a solicitar o BPC/LOAS pelo INSS."
@@ -60,7 +60,7 @@ export default function SpecialtiesBento() {
     {
       title: "Direito Aéreo & Danos aos Passageiros",
       badge: "Transporte Aéreo",
-      description: "Reparação civil e ressarcimento integral por falhas graves de companhias aéreas. A legislação brasileira e o CDC garantem indenização por tempo perdido e transtornos sofridos.",
+      description: "Reparação civil por falhas na prestação do serviço de transporte aéreo. O CDC e a Resolução 400 da ANAC preveem deveres de assistência e possibilidade de reparação pelos danos sofridos.",
       situations: ["Voo cancelado ou atrasado por mais de 4 horas", "Extravio temporário ou definitivo de bagagem", "Overbooking (preterição de embarque) e perda de conexões"],
       ctaText: "Analisar problema com voo",
       whatsappMsg: "Olá, Dra. Taís. Tive um problema com companhia aérea (atraso/cancelamento de voo ou extravio de mala) e quero saber meus direitos."
@@ -76,7 +76,7 @@ export default function SpecialtiesBento() {
     {
       title: "Negativação Indevida & Serasa/SPC",
       badge: "Nome Limpo",
-      description: "Exclusão imediata de restrições de crédito decorrentes de contas já quitadas, fraudes de terceiros ou serviços nunca contratados, com pleito de indenização moral pedagógica.",
+      description: "Pedido de exclusão de restrições de crédito decorrentes de contas já quitadas, fraudes de terceiros ou serviços nunca contratados, com pleito de reparação por danos morais.",
       situations: ["Inscrição no SPC/Serasa por conta já paga", "Dívidas fraudulentas em nome do consumidor", "Manutenção indevida do nome negativado"],
       ctaText: "Consultar exclusão de restrição",
       whatsappMsg: "Olá, Dra. Taís. Meu nome foi negativado indevidamente no SPC/Serasa e preciso retirá-lo e entender meus direitos."
@@ -102,12 +102,12 @@ export default function SpecialtiesBento() {
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
-              01 — Áreas de Atuação Especializada
+              01 — Áreas de Atuação
             </span>
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
           </div>
           <h2 className="font-serif text-title font-semibold text-charcoal">
-            Especialização técnica focada nas suas necessidades reais.
+            Atuação técnica focada nas suas necessidades reais.
           </h2>
           <p className="text-sm sm:text-base text-charcoal-muted">
             Conhecimento profundo e contínuo nas duas frentes de maior impacto para os direitos do cidadão e do trabalhador brasileiro.

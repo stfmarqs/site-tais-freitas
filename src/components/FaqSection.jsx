@@ -9,11 +9,11 @@ const faqs = [
   },
   {
     q: 'Tive meu benefício negado ou cessado na perícia do INSS. Ainda é possível conseguir?',
-    a: 'Com certeza. O indeferimento administrativo pelo INSS é extremamente comum e não é a palavra final da lei. Através de uma ação judicial na Justiça Federal, você será submetido a uma nova perícia realizada por um médico especialista neutro e de confiança do juiz, e não por um funcionário do INSS. Caso o direito seja reconhecido, o segurado recebe todos os valores retroativos devidos desde a data do primeiro pedido.',
+    a: 'O indeferimento administrativo não encerra a discussão: é possível recorrer na via administrativa ou levar o caso à Justiça Federal, onde a perícia é feita por profissional nomeado pelo juízo, e não pelo INSS. Se o direito for reconhecido, a lei prevê o pagamento dos valores retroativos desde a data do requerimento. O resultado depende da análise das provas de cada caso.',
   },
   {
     q: 'O que é o BPC/LOAS e quem tem direito sem ter contribuído ao INSS?',
-    a: 'O Benefício de Prestação Continuada (BPC), previsto na Lei Orgânica da Assistência Social (LOAS), garante um salário mínimo mensal a pessoas com 65 anos ou mais, ou a pessoas com deficiência de qualquer idade que enfrentem impedimentos de longo prazo. A principal característica é que não é necessário ter contribuído ao INSS, bastando comprovar a vulnerabilidade socioeconômica e a inscrição no CadÚnico.',
+    a: 'O Benefício de Prestação Continuada (BPC), previsto na Lei Orgânica da Assistência Social (LOAS), prevê um salário mínimo mensal a pessoas com 65 anos ou mais, ou a pessoas com deficiência de qualquer idade que enfrentem impedimentos de longo prazo. A principal característica é que não é necessário ter contribuído ao INSS, bastando comprovar a vulnerabilidade socioeconômica e a inscrição no CadÚnico.',
   },
   {
     q: 'Meu voo foi cancelado ou atrasou mais de 4 horas. Quais são os meus direitos?',
@@ -114,7 +114,7 @@ export default function FaqSection() {
             <strong className="block font-semibold text-charcoal">
               Não encontrou a resposta para o seu caso?
             </strong>
-            Nossa equipe analisa situações particulares sem compromisso.
+            Cada situação é analisada individualmente.
           </div>
           <a
             href={getWhatsAppUrl('Olá, Dra. Taís. Li o FAQ do site mas fiquei com uma dúvida sobre minha situação específica.')}
