@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  Shield, 
-  Plane, 
-  CreditCard, 
-  HeartHandshake, 
-  FileSearch, 
-  AlertCircle, 
-  ArrowUpRight, 
-  Check, 
-  Clock, 
-  Sparkles,
-  Layers,
-  Scale
-} from 'lucide-react';
+import { Shield, Plane, ArrowUpRight, Check } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/vcard';
 
 export default function SpecialtiesBento() {
@@ -107,46 +94,53 @@ export default function SpecialtiesBento() {
   const currentCards = activeTab === 'previdenciario' ? previdenciarioCards : consumidorCards;
 
   return (
-    <section id="especialidades" className="py-20 bg-white border-y border-stone-200/70">
+    <section id="especialidades" className="py-20 bg-white border-y border-rule" data-reveal>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-[#FAF8F5] text-stone-700 border border-stone-200">
-            <Layers size={13} className="text-[#D97736]" />
-            Áreas de Atuação Especializada
+          <div className="flex items-center justify-center gap-3">
+            <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
+              01 — Áreas de Atuação Especializada
+            </span>
+            <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[#3B3732] tracking-tight">
+          <h2 className="font-serif text-title font-semibold text-charcoal">
             Especialização técnica focada nas suas necessidades reais.
           </h2>
-          <p className="text-sm sm:text-base text-stone-600">
+          <p className="text-sm sm:text-base text-charcoal-muted">
             Conhecimento profundo e contínuo nas duas frentes de maior impacto para os direitos do cidadão e do trabalhador brasileiro.
           </p>
 
           {/* OriginKit / Skiper UI Style Tab Switcher */}
           <div className="pt-4 flex justify-center">
-            <div className="inline-flex p-1.5 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 shadow-xs">
+            <div className="inline-flex p-1.5 rounded-surface bg-cream border border-rule">
               <button
+                type="button"
+                aria-pressed={activeTab === 'previdenciario'}
                 onClick={() => setActiveTab('previdenciario')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
                   activeTab === 'previdenciario'
-                    ? 'bg-[#3B3732] text-white shadow-xs'
-                    : 'text-stone-600 hover:text-stone-900'
+                    ? 'bg-charcoal text-white'
+                    : 'text-charcoal-muted hover:text-charcoal'
                 }`}
               >
-                <Shield size={16} className={activeTab === 'previdenciario' ? 'text-[#FDBA74]' : 'text-stone-400'} />
+                <Shield size={16} className={activeTab === 'previdenciario' ? 'text-peach' : 'text-charcoal-muted'} />
                 <span>Direito Previdenciário (INSS)</span>
               </button>
 
               <button
+                type="button"
+                aria-pressed={activeTab === 'consumidor'}
                 onClick={() => setActiveTab('consumidor')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
                   activeTab === 'consumidor'
-                    ? 'bg-[#3B3732] text-white shadow-xs'
-                    : 'text-stone-600 hover:text-stone-900'
+                    ? 'bg-charcoal text-white'
+                    : 'text-charcoal-muted hover:text-charcoal'
                 }`}
               >
-                <Plane size={16} className={activeTab === 'consumidor' ? 'text-[#FDBA74]' : 'text-stone-400'} />
+                <Plane size={16} className={activeTab === 'consumidor' ? 'text-peach' : 'text-charcoal-muted'} />
                 <span>Direito do Consumidor & Bancário</span>
               </button>
             </div>
@@ -159,37 +153,37 @@ export default function SpecialtiesBento() {
           {currentCards.map((card, idx) => (
             <div
               key={card.title}
-              className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-3xl bg-[#FAF8F5] border border-stone-200/80 hover:border-stone-300 hover:bg-white transition-all duration-300 shadow-xs hover:shadow-md"
+              className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-shell bg-cream border border-rule hover:border-rule-strong hover:bg-white transition-colors duration-300"
             >
               <div>
                 {/* Top Badge & Number */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[#FDBA74]/20 text-[#B45B23] border border-[#FDBA74]/30">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-peach/20 text-terracotta-dark border border-peach/30">
                     {card.badge}
                   </span>
-                  <span className="text-[11px] font-mono text-stone-400 font-medium">
+                  <span className="text-[11px] font-mono text-charcoal-muted font-medium">
                     0{idx + 1}
                   </span>
                 </div>
 
                 {/* Card Title */}
-                <h3 className="font-serif text-xl font-semibold text-[#3B3732] tracking-tight mb-3 group-hover:text-[#25221F]">
+                <h3 className="font-serif text-xl font-semibold text-charcoal tracking-tight mb-3 group-hover:text-charcoal-deep">
                   {card.title}
                 </h3>
 
                 {/* Card Description */}
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-5">
+                <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed mb-5">
                   {card.description}
                 </p>
 
                 {/* Key Situations (Bullet list) */}
-                <div className="space-y-2 pt-2 pb-6 border-t border-stone-200/60">
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-stone-400">
+                <div className="space-y-2 pt-2 pb-6 border-t border-rule">
+                  <div className="text-[10px] uppercase tracking-wider font-semibold text-charcoal-muted">
                     Principais Situações:
                   </div>
                   {card.situations.map((sit, sIdx) => (
-                    <div key={sIdx} className="flex items-start gap-2 text-xs text-stone-700">
-                      <Check size={14} className="text-[#D97736] shrink-0 mt-0.5" />
+                    <div key={sIdx} className="flex items-start gap-2 text-xs text-charcoal-muted">
+                      <Check size={14} className="text-terracotta shrink-0 mt-0.5" />
                       <span>{sit}</span>
                     </div>
                   ))}
@@ -197,15 +191,15 @@ export default function SpecialtiesBento() {
               </div>
 
               {/* Card Footer Action */}
-              <div className="pt-4 border-t border-stone-200/60">
+              <div className="pt-4 border-t border-rule">
                 <a
                   href={getWhatsAppUrl(card.whatsappMsg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-xs font-semibold text-stone-800 bg-white border border-stone-200/90 group-hover:bg-[#3B3732] group-hover:text-white group-hover:border-[#3B3732] transition-all shadow-2xs"
+                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-field text-xs font-semibold text-charcoal bg-white border border-rule group-hover:bg-charcoal group-hover:text-white group-hover:border-charcoal transition-colors"
                 >
                   <span>{card.ctaText}</span>
-                  <ArrowUpRight size={14} className="text-stone-400 group-hover:text-[#FDBA74] transition-colors" />
+                  <ArrowUpRight size={14} className="text-charcoal-muted group-hover:text-peach transition-colors" />
                 </a>
               </div>
 
@@ -214,15 +208,15 @@ export default function SpecialtiesBento() {
         </div>
 
         {/* Bottom Callout */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-[#3B3732] text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 p-6 sm:p-8 rounded-shell bg-charcoal text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-left space-y-1">
-            <div className="text-xs uppercase tracking-widest text-[#FDBA74] font-semibold">
+            <div className="text-xs uppercase tracking-widest text-peach font-semibold">
               Dúvida sobre outra situação?
             </div>
             <h4 className="font-serif text-lg sm:text-xl font-medium">
               Cada caso possui particularidades que merecem análise individualizada.
             </h4>
-            <p className="text-xs text-stone-300">
+            <p className="text-xs text-rule-strong">
               Entre em contato direto pelo WhatsApp para um direcionamento preliminar seguro.
             </p>
           </div>
@@ -231,7 +225,7 @@ export default function SpecialtiesBento() {
             href={getWhatsAppUrl("Olá, Dra. Taís. Tenho uma dúvida jurídica e gostaria de saber se meu caso se enquadra na sua área de atuação.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FAF8F5] text-stone-900 text-xs font-semibold hover:bg-[#FDBA74] transition-colors shrink-0 cursor-pointer shadow-xs"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-field bg-cream text-charcoal text-xs font-semibold hover:bg-peach transition-colors shrink-0 cursor-pointer"
           >
             <span>Tirar Dúvida no WhatsApp</span>
             <ArrowUpRight size={15} />

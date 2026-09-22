@@ -1,179 +1,165 @@
 import React from 'react';
-import { 
-  ArrowRight, 
-  MessageCircle, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Scale, 
-  Sparkles, 
-  ChevronDown,
-  CreditCard
+import {
+  ArrowRight,
+  MessageCircle,
+  ShieldCheck,
+  CheckCircle2,
+  CreditCard,
+  Sparkles,
 } from 'lucide-react';
 import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
 
 export default function Hero({ onOpenCardModal }) {
   return (
-    <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
-      {/* Subtle organic background mesh gradient */}
-      <div className="absolute top-0 right-0 -z-10 w-[550px] h-[550px] bg-gradient-to-bl from-[#FDBA74]/15 via-[#FDBA74]/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-stone-200/40 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-10 pb-16 md:pt-16 md:pb-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Copy & Value Proposition (7 Cols) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            
-            {/* OriginKit/Cult UI Style Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-stone-200/80 shadow-xs backdrop-blur-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-[11px] font-semibold tracking-wider uppercase text-stone-700">
+          {/* Coluna esquerda: proposta de valor */}
+          <div className="space-y-6 text-left lg:col-span-7">
+
+            {/* Rótulo editorial: filete + versalete, no lugar da pill com bolinha */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
                 {CONTACT_INFO.oab}
               </span>
-              <span className="text-stone-300">|</span>
-              <span className="text-[11px] font-medium text-stone-600">
+              <span className="h-3 w-px bg-rule-strong" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-charcoal-muted">
                 Assessoria Jurídica Consultiva
               </span>
             </div>
 
-            {/* Editorial Title */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[54px] font-semibold text-[#3B3732] tracking-tight leading-[1.12]">
+            <h1 className="font-serif text-display font-semibold text-charcoal">
               Defesa sólida do seu{' '}
-              <span className="relative inline-block text-[#25221F] font-bold">
+              <span className="relative inline-block font-bold text-charcoal-deep">
                 benefício
-                <span className="absolute bottom-1 left-0 w-full h-2.5 bg-[#FDBA74]/35 -z-10 rounded-sm"></span>
+                <span className="absolute bottom-1 left-0 -z-10 h-2.5 w-full rounded-sm bg-peach/35" />
               </span>{' '}
               e dos seus direitos contra abusos.
             </h1>
 
-            {/* Subtitle / Narrative */}
-            <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-2xl">
-              Atendimento especializado e humanizado com a <strong className="text-stone-900 font-semibold">Dra. Taís Freitas</strong>. 
-              Garantimos a proteção da sua aposentadoria no INSS e a justa reparação perante cancelamentos de voos, fraudes bancárias e relações de consumo.
+            <p className="max-w-[62ch] text-lede text-charcoal-muted">
+              Atendimento especializado e humanizado com a{' '}
+              <strong className="font-semibold text-charcoal">Dra. Taís Freitas</strong>.
+              Garantimos a proteção da sua aposentadoria no INSS e a justa reparação perante
+              cancelamentos de voos, fraudes bancárias e relações de consumo.
             </p>
 
-            {/* Trust Points / Micro Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-              <div className="flex items-center gap-2 text-xs text-stone-700">
-                <CheckCircle2 size={16} className="text-[#D97736] shrink-0" />
-                <span>Pós-graduação e foco contínuo em Previdenciário</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-stone-700">
-                <CheckCircle2 size={16} className="text-[#D97736] shrink-0" />
-                <span>Atuação ágil digital em todo o Brasil e presencial</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-stone-700">
-                <CheckCircle2 size={16} className="text-[#D97736] shrink-0" />
-                <span>Análise documental técnica e individualizada</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs text-stone-700">
-                <CheckCircle2 size={16} className="text-[#D97736] shrink-0" />
-                <span>Conformidade ética estrita com o Provimento 205/2021</span>
-              </div>
-            </div>
+            {/* Pontos de confiança */}
+            <ul className="grid grid-cols-1 gap-2.5 pt-2 sm:grid-cols-2">
+              {[
+                'Pós-graduação e foco contínuo em Previdenciário',
+                'Atuação ágil digital em todo o Brasil e presencial',
+                'Análise documental técnica e individualizada',
+                'Conformidade ética estrita com o Provimento 205/2021',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2 text-xs text-charcoal-muted">
+                  <CheckCircle2 size={16} className="mt-px shrink-0 text-terracotta" aria-hidden="true" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-            {/* Action Buttons */}
-            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            {/* Ações */}
+            <div className="flex flex-col items-stretch gap-3 pt-4 sm:flex-row sm:items-center">
               <a
-                href={getWhatsAppUrl("Olá, Dra. Taís. Gostaria de entender o enquadramento do meu caso no WhatsApp.")}
+                href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de entender o enquadramento do meu caso no WhatsApp.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-[#3B3732] text-white font-medium text-sm shadow-md hover:bg-[#25221F] hover:shadow-lg transition-all group cursor-pointer"
+                className="group inline-flex items-center justify-center gap-3 rounded-field bg-charcoal px-6 py-4 text-sm font-medium text-white transition-colors duration-200 ease-out-quint hover:bg-charcoal-deep active:scale-[0.99]"
               >
-                <MessageCircle size={18} className="text-[#FDBA74] group-hover:scale-110 transition-transform" />
+                <MessageCircle size={18} className="text-peach" aria-hidden="true" />
                 <span>Analisar Meu Caso no WhatsApp</span>
-                <ArrowRight size={16} className="text-stone-300 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={16}
+                  className="text-white/50 transition-transform duration-200 ease-out-quint group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
               </a>
 
               <a
                 href="#triagem"
-                className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-white text-stone-800 font-medium text-sm border border-stone-200/90 shadow-xs hover:bg-stone-50 hover:border-stone-300 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-field border border-rule bg-white px-5 py-4 text-sm font-medium text-charcoal transition-colors duration-200 ease-out-quint hover:border-rule-strong hover:bg-warm-gray"
               >
-                <Sparkles size={16} className="text-[#D97736]" />
-                <span>Simulador & Triagem Prévia</span>
+                <Sparkles size={16} className="text-terracotta" aria-hidden="true" />
+                <span>Simulador &amp; Triagem Prévia</span>
               </a>
 
               <button
+                type="button"
                 onClick={onOpenCardModal}
-                className="inline-flex items-center justify-center gap-2 px-4 py-4 rounded-2xl bg-stone-100 text-stone-700 font-medium text-sm hover:bg-stone-200 transition-all cursor-pointer"
-                title="Salvar dados na agenda"
+                className="inline-flex items-center justify-center gap-2 rounded-field bg-warm-gray px-4 py-4 text-sm font-medium text-charcoal-muted transition-colors duration-200 ease-out-quint hover:bg-rule"
               >
-                <CreditCard size={16} className="text-stone-600" />
-                <span className="sm:inline">Cartão Digital</span>
+                <CreditCard size={16} aria-hidden="true" />
+                <span>Cartão Digital</span>
               </button>
             </div>
 
-            {/* Ethical Disclaimer under CTA */}
-            <div className="pt-1 text-[11px] text-stone-500">
-              * A triagem é de caráter técnico-orientativo, sem promessa de resultado, respeitando as normas da OAB.
-            </div>
-
+            <p className="pt-1 text-[11px] text-charcoal-muted/80">
+              * A triagem é de caráter técnico-orientativo, sem promessa de resultado, respeitando as
+              normas da OAB.
+            </p>
           </div>
 
-          {/* Right Column: Editorial Portrait & Floating Badges (5 Cols) */}
-          <div className="lg:col-span-5 relative flex justify-center">
-            
-            {/* Geometric Backdrop Frames */}
-            <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-[32px] overflow-hidden p-2 bg-gradient-to-b from-stone-200/60 to-stone-100/30 ring-1 ring-black/5 shadow-2xl">
-              
-              <div className="w-full h-full rounded-[26px] overflow-hidden relative bg-[#3B3732]">
+          {/* Coluna direita: retrato.
+              O contêiner externo NÃO recorta — é ele que permite os selos escaparem da moldura. */}
+          <div className="relative flex justify-center lg:col-span-5">
+            <div className="relative w-full max-w-[420px]">
+
+              <div className="relative aspect-[4/5] overflow-hidden rounded-shell border border-rule bg-charcoal">
                 <img
-                  src="/assets/tais-portrait.png"
-                  alt="Dra. Taís Freitas - Advogada OAB MT 23.396"
-                  className="w-full h-full object-cover object-top scale-105 hover:scale-100 transition-transform duration-700"
+                  src="/assets/tais-portrait-840.webp"
+                  srcSet="/assets/tais-portrait-420.webp 420w, /assets/tais-portrait-840.webp 840w"
+                  sizes="(min-width: 1024px) 420px, 92vw"
+                  width={840}
+                  height={840}
+                  alt="Dra. Taís Freitas, advogada inscrita na OAB/MT sob o nº 23.396"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover object-top"
                 />
 
-                {/* Subtle dark gradient overlay at bottom for badge readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#25221F]/80 via-transparent to-transparent pointer-events-none" />
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-charcoal-deep/85 via-transparent to-transparent"
+                  aria-hidden="true"
+                />
 
-                {/* Bottom Overlay Info Tag */}
-                <div className="absolute bottom-5 left-5 right-5 text-left text-white pointer-events-auto">
-                  <div className="text-[10px] font-semibold uppercase tracking-widest text-[#FDBA74] mb-0.5">
+                <div className="absolute inset-x-5 bottom-5 text-left text-white">
+                  <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-peach">
                     Advocacia Especializada
                   </div>
-                  <div className="font-serif text-xl font-bold tracking-tight">
-                    Dra. Taís Freitas
-                  </div>
-                  <div className="text-xs text-stone-300 font-light mt-0.5">
+                  <div className="font-serif text-xl font-bold tracking-tight">Dra. Taís Freitas</div>
+                  <div className="mt-0.5 text-xs font-light text-white/75">
                     OAB/MT 23.396 • Pós-Graduada em Previdenciário
                   </div>
                 </div>
-
               </div>
 
-              {/* Floating Badge 1: OriginKit Style Floating Pill (Top Left) */}
-              <div className="absolute -top-3 -left-3 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-lg border border-stone-200/80 max-w-[200px] text-left animate-subtle-float">
-                <div className="w-7 h-7 rounded-xl bg-[#FAF8F5] border border-stone-200 flex items-center justify-center text-[#D97736] mb-1.5">
-                  <ShieldCheck size={16} />
+              {/* Selos: irmãos da moldura, não filhos — por isso não são mais cortados */}
+              <div className="absolute -left-3 -top-3 hidden max-w-[210px] rounded-surface border border-rule bg-white p-3.5 text-left sm:-left-6 sm:block">
+                <div className="mb-1.5 flex h-7 w-7 items-center justify-center rounded-field border border-rule bg-cream text-terracotta">
+                  <ShieldCheck size={16} aria-hidden="true" />
                 </div>
-                <div className="text-[11px] font-bold text-stone-900 leading-tight">
+                <div className="text-[11px] font-bold leading-tight text-charcoal">
                   Especialista em INSS
                 </div>
-                <div className="text-[10px] text-stone-500 mt-0.5 leading-snug">
+                <div className="mt-0.5 text-[10px] leading-snug text-charcoal-muted">
                   Planejamento, concessão e revisões de aposentadoria
                 </div>
               </div>
 
-              {/* Floating Badge 2: OriginKit Style Floating Pill (Bottom Right) */}
-              <div className="absolute -bottom-3 -right-3 sm:-right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-stone-200/80 text-left flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200 shrink-0">
-                  <MessageCircle size={16} />
+              <div className="absolute -bottom-3 -right-3 hidden items-center gap-3 rounded-surface border border-rule bg-white p-3 text-left sm:-right-4 sm:flex">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-rule bg-cream text-terracotta">
+                  <MessageCircle size={16} aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-bold text-stone-900 leading-tight">
-                    Canal Direto
-                  </div>
-                  <div className="text-[10px] text-stone-500">
-                    Atendimento ágil no WhatsApp
-                  </div>
+                  <div className="text-[11px] font-bold leading-tight text-charcoal">Canal Direto</div>
+                  <div className="text-[10px] text-charcoal-muted">Atendimento ágil no WhatsApp</div>
                 </div>
               </div>
 
             </div>
-
           </div>
 
         </div>
