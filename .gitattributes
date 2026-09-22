@@ -1,0 +1,17 @@
+# Normaliza fim de linha: LF no repositório, nativo no working copy.
+# Sem isto, o autocrlf do Windows produz diffs de arquivo inteiro entre máquinas.
+* text=auto eol=lf
+
+# Binários: nunca normalizar nem tentar diff textual
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pdf binary
+
+# Gerado pelo npm: colapsa no diff e evita conflito manual
+package-lock.json linguist-generated=true -diff
