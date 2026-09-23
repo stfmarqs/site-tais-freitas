@@ -19,13 +19,14 @@ export default function Hero({ onOpenCardModal }) {
           <div className="space-y-6 text-left lg:col-span-7">
 
             {/* Rótulo editorial: filete + versalete, no lugar da pill com bolinha */}
+            {/* whitespace-nowrap: sem isto "OAB/MT 23.396" quebra no meio em 390px */}
             <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
+              <span className="h-px w-8 shrink-0 bg-terracotta" aria-hidden="true" />
+              <span className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
                 {CONTACT_INFO.oab}
               </span>
-              <span className="h-3 w-px bg-rule-strong" aria-hidden="true" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-charcoal-muted">
+              <span className="hidden h-3 w-px shrink-0 bg-rule-strong sm:block" aria-hidden="true" />
+              <span className="hidden whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.14em] text-charcoal-muted sm:inline">
                 Assessoria Jurídica Consultiva
               </span>
             </div>
@@ -125,14 +126,17 @@ export default function Hero({ onOpenCardModal }) {
                   aria-hidden="true"
                 />
 
-                <div className="absolute inset-x-5 bottom-5 text-left text-white">
+                {/* A quina inferior direita é ocupada pelo selo "Canal Direto",
+                    que flutua por cima da moldura. Limitar a largura aqui evita
+                    que a linha da OAB corra por baixo dele. */}
+                {/* Duas linhas só: a quina inferior direita é ocupada pelo selo
+                    "Canal Direto", que flutua sobre a moldura. A inscrição na OAB
+                    continua no cabeçalho, no rótulo acima, no "Sobre" e no rodapé. */}
+                <div className="absolute inset-x-5 bottom-5 text-left text-white sm:max-w-[58%]">
                   <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-peach">
                     Direito Previdenciário
                   </div>
                   <div className="font-serif text-xl font-bold tracking-tight">Dra. Taís Freitas</div>
-                  <div className="mt-0.5 text-xs font-light text-white/75">
-                    OAB/MT 23.396 • Pós-Graduada em Previdenciário
-                  </div>
                 </div>
               </div>
 
