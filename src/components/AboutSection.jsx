@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, GraduationCap, HeartHandshake, MapPin, MessageCircle, CreditCard } from 'lucide-react';
-import { getWhatsAppUrl } from '../utils/vcard';
+import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
 
 const pilares = [
   {
@@ -20,47 +20,74 @@ const pilares = [
   },
 ];
 
+const ficha = [
+  { rotulo: 'Inscrição', valor: CONTACT_INFO.oab },
+  { rotulo: 'Formação', valor: 'Pós-graduação em Direito Previdenciário' },
+  { rotulo: 'Áreas', valor: 'Previdenciário e Consumidor' },
+  { rotulo: 'Base', valor: 'Cuiabá — MT' },
+  { rotulo: 'Atendimento', valor: 'Presencial e digital, em todo o Brasil' },
+];
+
 export default function AboutSection({ onOpenCardModal }) {
   return (
     <section id="sobre" className="bg-cream py-20" data-reveal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
 
-          <div className="flex justify-center lg:col-span-5">
-            <div className="relative w-full max-w-[400px]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-shell border border-rule bg-charcoal">
-                <img
-                  src="/assets/tais-previdenciario-800.webp"
-                  srcSet="/assets/tais-previdenciario-400.webp 400w, /assets/tais-previdenciario-800.webp 800w"
-                  sizes="(min-width: 1024px) 400px, 92vw"
-                  width={800}
-                  height={1000}
-                  alt="Dra. Taís Freitas segurando um livro de Direito Previdenciário"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover object-top"
-                />
+          {/* Ficha profissional. Substitui a arte de post que ocupava este espaço:
+              era um material de Instagram, com texto e selo de verificado
+              chapados na imagem, exibido como se fosse fotografia. */}
+          <div className="lg:col-span-5">
+            <div className="on-dark rounded-shell bg-charcoal-dark p-8 text-white">
+              <img
+                src="/assets/monogram-cream-96.webp"
+                alt=""
+                width={96}
+                height={78}
+                loading="lazy"
+                className="mb-6 h-12 w-auto opacity-90"
+              />
 
-                <span className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-field border border-white/20 bg-charcoal/70 p-2 backdrop-blur-md">
-                  <img
-                    src="/assets/monogram-cream-96.webp"
-                    alt=""
-                    width={96}
-                    height={78}
-                    loading="lazy"
-                    className="h-full w-full object-contain"
-                  />
-                </span>
+              <p className="font-serif text-2xl font-semibold leading-tight text-white">
+                Dra. Taís Freitas
+              </p>
+              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-peach">
+                Advogada
+              </p>
 
-                <div className="absolute inset-x-4 bottom-4 rounded-surface border border-rule bg-white/95 p-4 backdrop-blur-md">
-                  <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] text-charcoal">
-                    <GraduationCap size={16} className="text-terracotta" aria-hidden="true" />
-                    Pós-Graduação em Previdenciário
-                  </p>
-                  <p className="mt-1 text-xs text-charcoal-muted">
-                    Dedicação contínua ao Direito Previdenciário e defesa do consumidor.
-                  </p>
-                </div>
+              <dl className="mt-7 space-y-0 border-t border-white/10">
+                {ficha.map(({ rotulo, valor }) => (
+                  <div
+                    key={rotulo}
+                    className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-white/10 py-3"
+                  >
+                    <dt className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
+                      {rotulo}
+                    </dt>
+                    <dd className="text-right text-xs text-white/80">{valor}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de agendar uma conversa sobre o meu caso.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-field bg-peach px-5 py-3 text-xs font-semibold text-charcoal-dark transition-colors duration-200 ease-out-quint hover:bg-peach-light"
+                >
+                  <MessageCircle size={16} aria-hidden="true" />
+                  <span>Conversar com a Dra. Taís</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={onOpenCardModal}
+                  className="inline-flex items-center gap-2 rounded-field border border-white/20 bg-white/10 px-4 py-3 text-xs font-semibold text-white transition-colors duration-200 ease-out-quint hover:bg-white/20"
+                >
+                  <CreditCard size={15} className="text-peach" aria-hidden="true" />
+                  <span>Salvar contato</span>
+                </button>
               </div>
             </div>
           </div>
@@ -74,7 +101,8 @@ export default function AboutSection({ onOpenCardModal }) {
             </div>
 
             <h2 className="font-serif text-title font-semibold text-charcoal">
-              Rigor técnico aliado à empatia que a sua causa merece.
+              Rigor técnico aliado à <span className="text-terracotta">empatia</span> que a sua causa
+              merece.
             </h2>
 
             <div className="max-w-[62ch] space-y-4 text-lede text-charcoal-muted">
@@ -110,26 +138,12 @@ export default function AboutSection({ onOpenCardModal }) {
               ))}
             </ul>
 
-            <div className="flex flex-wrap items-center gap-3 pt-4">
-              <a
-                href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de agendar uma conversa sobre o meu caso.')}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-field bg-charcoal px-6 py-3.5 text-xs font-semibold text-white transition-colors duration-200 ease-out-quint hover:bg-charcoal-deep"
-              >
-                <MessageCircle size={16} className="text-peach" aria-hidden="true" />
-                <span>Conversar com a Dra. Taís</span>
-              </a>
-
-              <button
-                type="button"
-                onClick={onOpenCardModal}
-                className="inline-flex items-center gap-2 rounded-field border border-rule bg-white px-5 py-3.5 text-xs font-semibold text-charcoal transition-colors duration-200 ease-out-quint hover:border-rule-strong hover:bg-warm-gray"
-              >
-                <CreditCard size={15} className="text-terracotta" aria-hidden="true" />
-                <span>Salvar Contato (Cartão Virtual)</span>
-              </button>
-            </div>
+            <p className="flex items-start gap-2 pt-2 text-[11px] text-charcoal-muted/80">
+              <GraduationCap size={14} className="mt-0.5 shrink-0 text-terracotta" aria-hidden="true" />
+              <span>
+                Dedicação contínua ao Direito Previdenciário e à defesa do consumidor.
+              </span>
+            </p>
           </div>
 
         </div>

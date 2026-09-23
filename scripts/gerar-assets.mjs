@@ -18,9 +18,12 @@ const RAIZ = path.resolve(import.meta.dirname, '..');
 const ORIGEM = path.join(RAIZ, 'brand-assets');
 const DESTINO = path.join(RAIZ, 'public', 'assets');
 
+// Único material fotográfico real disponível. Os outros dois arquivos de
+// brand-assets (tais-previdenciario.png e tais-laptop.png) são artes de post
+// de Instagram, com texto e selo de verificado chapados na imagem — não
+// servem como fotografia de site.
 const FOTOS = [
-  { arquivo: 'tais-portrait.png', base: 'tais-portrait', larguras: [840, 420, 160] },
-  { arquivo: 'tais-previdenciario.png', base: 'tais-previdenciario', larguras: [800, 400] },
+  { arquivo: 'tais-portrait.png', base: 'tais-portrait', larguras: [1080, 840, 420, 160] },
 ];
 
 const CORES = {

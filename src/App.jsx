@@ -8,6 +8,7 @@ import AboutSection from './components/AboutSection';
 import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import FaixaAreas from './components/FaixaAreas';
 
 // O modal arrasta a biblioteca de QR Code junto. Como ele só abre por ação do
 // usuário, fica fora do bundle inicial — o que o visitante baixa para ler a
@@ -33,6 +34,7 @@ export default function App() {
       <main className="flex-1">
         <Hero onOpenCardModal={abrirCartao} />
         <SpecialtiesBento />
+        <FaixaAreas />
         <IntakeDiagnostic />
         <ProcessVisualLaw />
         <AboutSection onOpenCardModal={abrirCartao} />
