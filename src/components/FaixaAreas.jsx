@@ -1,18 +1,8 @@
 import React from 'react';
+import { AREAS } from '../content';
 
-const termos = [
-  'Aposentadoria Urbana & Rural',
-  'BPC / LOAS',
-  'Benefício Negado no INSS',
-  'Auxílio-Doença & Incapacidade',
-  'Pensão por Morte',
-  'Revisão de Benefício',
-  'Planejamento Previdenciário',
-  'Acertos de CNIS',
-  'Direito Aéreo & Voos',
-  'Golpes do Pix & Fraudes',
-  'Negativação Indevida',
-];
+// Mesma lista dos cards, para a faixa não divergir das áreas.
+const termos = AREAS.flatMap((area) => area.cards.map((card) => card.titulo));
 
 export default function FaixaAreas() {
   return (

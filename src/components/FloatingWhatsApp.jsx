@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { getWhatsAppUrl } from '../utils/vcard';
+import { MENSAGEM_CONTATO } from '../content';
 
 export default function FloatingWhatsApp() {
   // Só aparece depois que o hero sai de cena. Antes disso o botão ficava
@@ -33,14 +34,14 @@ export default function FloatingWhatsApp() {
     >
       {avisoAberto && (
         <div className="hidden items-center gap-2 rounded-surface border border-rule bg-white px-3.5 py-2 text-xs text-charcoal shadow-sm sm:flex">
-          <span className="font-medium">Dúvidas sobre seu direito?</span>
+          <span className="font-medium">Quer saber se tem direito?</span>
           <a
-            href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de tirar uma dúvida pelo WhatsApp.')}
+            href={getWhatsAppUrl(MENSAGEM_CONTATO)}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-terracotta underline-offset-2 hover:underline"
           >
-            Fale conosco
+            Fale comigo
           </a>
           <button
             type="button"
@@ -54,17 +55,12 @@ export default function FloatingWhatsApp() {
       )}
 
       <a
-        href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Acessei seu site e gostaria de uma orientação jurídica preliminar.')}
+        href={getWhatsAppUrl(MENSAGEM_CONTATO)}
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center gap-2.5 rounded-full bg-charcoal px-4 py-3.5 text-white shadow-xl transition-all duration-200 ease-out-quint hover:scale-105 hover:bg-charcoal-deep active:scale-95 hover:shadow-2xl hover:shadow-charcoal/25"
         aria-label="Iniciar atendimento no WhatsApp"
       >
-        <span className="relative flex h-2.5 w-2.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-        </span>
-
         <MessageCircle
           size={22}
           className="text-peach transition-transform duration-200 ease-out-quint group-hover:scale-110"

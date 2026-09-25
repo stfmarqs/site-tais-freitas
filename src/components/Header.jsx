@@ -1,12 +1,13 @@
 import React, { useEffect, useId, useState } from 'react';
 import { MessageCircle, Menu, X, CreditCard, ArrowUpRight } from 'lucide-react';
 import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
+import { MENSAGEM_CONTATO } from '../content';
 
 const navLinks = [
-  { label: 'Especialidades', href: '#especialidades' },
-  { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Sobre a Advogada', href: '#sobre' },
-  { label: 'Dúvidas Frequentes', href: '#faq' },
+  { label: 'Atuação', href: '#atuacao' },
+  { label: 'Atendimento', href: '#atendimento' },
+  { label: 'Sobre', href: '#sobre' },
+  { label: 'Contato', href: '#contato' },
 ];
 
 export default function Header({ onOpenCardModal }) {
@@ -80,7 +81,7 @@ export default function Header({ onOpenCardModal }) {
             </span>
           </a>
 
-          {/* Navegação desktop — só a partir de lg, onde os 5 itens cabem em uma linha */}
+          {/* Navegação desktop — a partir de lg logo, links e botão cabem em uma linha */}
           <nav aria-label="Navegação principal" className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
@@ -93,8 +94,8 @@ export default function Header({ onOpenCardModal }) {
             ))}
           </nav>
 
-          <div className="hidden xl:flex shrink-0 items-center gap-3">
-            {/* O cartão digital também está no Hero, Sobre e Rodapé — no header
+          <div className="hidden lg:flex shrink-0 items-center gap-3">
+            {/* O cartão digital também está no Sobre e no Rodapé — no header
                 ele só entra quando há folga de verdade, para a barra não estourar. */}
             <button
               type="button"
@@ -106,13 +107,13 @@ export default function Header({ onOpenCardModal }) {
             </button>
 
             <a
-              href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Acessei seu site e gostaria de orientação jurídica sobre o meu caso.')}
+              href={getWhatsAppUrl(MENSAGEM_CONTATO)}
               target="_blank"
               rel="noopener noreferrer"
               className={`group inline-flex items-center gap-2 rounded-field px-4 py-2 text-xs font-semibold shadow-sm transition-all duration-300 ease-out-quint hover:scale-[1.03] active:scale-[0.98] ${solido ? 'bg-charcoal text-white hover:bg-charcoal-deep hover:shadow-md' : 'bg-peach text-charcoal-dark hover:bg-peach-light hover:shadow-peach/20'}`}
             >
               <MessageCircle size={14} className={solido ? 'text-peach' : 'text-charcoal-dark/70'} aria-hidden="true" />
-              <span>Consultar no WhatsApp</span>
+              <span>Fale comigo</span>
               <ArrowUpRight size={13} className={`transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${solido ? 'text-white/60 group-hover:text-white' : 'text-charcoal-dark/50'}`} aria-hidden="true" />
             </a>
           </div>
@@ -180,14 +181,14 @@ export default function Header({ onOpenCardModal }) {
               </button>
 
               <a
-                href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de uma análise prévia do meu caso.')}
+                href={getWhatsAppUrl(MENSAGEM_CONTATO)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex w-full items-center justify-center gap-2 rounded-field bg-charcoal px-4 py-3 text-xs font-semibold text-white transition-colors duration-200 hover:bg-charcoal-deep"
               >
                 <MessageCircle size={16} className="text-peach" aria-hidden="true" />
-                <span>Falar com a advogada</span>
+                <span>Fale comigo no WhatsApp</span>
               </a>
             </div>
           </div>

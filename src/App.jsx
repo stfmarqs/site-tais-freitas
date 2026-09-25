@@ -1,11 +1,10 @@
 import React, { Suspense, lazy, useCallback, useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import SpecialtiesBento from './components/SpecialtiesBento';
+import AreasAtuacao from './components/AreasAtuacao';
 import FaixaAreas from './components/FaixaAreas';
-import ProcessVisualLaw from './components/ProcessVisualLaw';
+import Diferenciais from './components/Diferenciais';
 import AboutSection from './components/AboutSection';
-import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
@@ -52,12 +51,11 @@ export default function App() {
       <Header onOpenCardModal={abrirCartao} />
 
       <main className="flex-1">
-        <Hero onOpenCardModal={abrirCartao} />
-        <SpecialtiesBento />
+        <Hero />
+        <AreasAtuacao />
         <FaixaAreas />
-        <ProcessVisualLaw />
+        <Diferenciais />
         <AboutSection onOpenCardModal={abrirCartao} />
-        <FaqSection />
       </main>
 
       <Footer onOpenCardModal={abrirCartao} />

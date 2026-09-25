@@ -2,17 +2,18 @@ import React from 'react';
 import { MessageCircle, Phone, Mail, MapPin, CreditCard, ShieldCheck } from 'lucide-react';
 import { InstagramIcon } from './Icons';
 import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
+import { MENSAGEM_CONTATO } from '../content';
 
 const navegacao = [
-  { label: 'Áreas de Atuação', href: '#especialidades' },
-  { label: 'Como Funciona o Atendimento', href: '#como-funciona' },
-  { label: 'Sobre a Dra. Taís Freitas', href: '#sobre' },
-  { label: 'Perguntas Frequentes', href: '#faq' },
+  { label: 'Áreas de Atuação', href: '#atuacao' },
+  { label: 'Como eu atendo', href: '#atendimento' },
+  { label: 'Sobre', href: '#sobre' },
+  { label: 'Contato', href: '#contato' },
 ];
 
 export default function Footer({ onOpenCardModal }) {
   return (
-    <footer className="relative overflow-hidden bg-charcoal-dark text-white/70">
+    <footer id="contato" className="relative overflow-hidden bg-charcoal-dark text-white/70">
 
       {/* Faixa de chamada */}
       <div className="relative border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -29,29 +30,28 @@ export default function Footer({ onOpenCardModal }) {
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-peach/60" aria-hidden="true" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-peach">
-              Defesa Técnica &amp; Confiável
+              Contato
             </span>
             <span className="h-px w-8 bg-peach/60" aria-hidden="true" />
           </div>
 
           <h2 className="font-serif text-title font-semibold text-white">
-            Não deixe que o seu direito seja adiado ou ignorado.
+            Quer saber se você tem direito?
           </h2>
 
           <p className="mx-auto max-w-2xl text-lede font-light text-white/70">
-            Prazos no INSS e no Código de Defesa do Consumidor são curtos e decisivos. Uma análise
-            preventiva resguarda o seu patrimônio e a sua dignidade.
+            Me mande uma mensagem e conte o seu caso.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-3.5 pt-4 sm:flex-row">
             <a
-              href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Gostaria de agendar uma consulta preliminar sobre o meu caso.')}
+              href={getWhatsAppUrl(MENSAGEM_CONTATO)}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-field bg-peach px-7 py-4 text-xs font-bold uppercase tracking-[0.1em] text-charcoal-dark shadow-md shadow-peach/10 transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-lg hover:shadow-peach/20 active:scale-[0.98] sm:w-auto"
             >
               <MessageCircle size={18} className="transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
-              <span>Falar no WhatsApp</span>
+              <span>Fale comigo no WhatsApp</span>
             </a>
 
             <button
@@ -93,8 +93,8 @@ export default function Footer({ onOpenCardModal }) {
             </div>
 
             <p className="max-w-sm text-xs leading-relaxed text-white/55">
-              Escritório dedicado ao Direito Previdenciário (INSS) e Direito do Consumidor. Atendimento
-              técnico, humanizado e com respaldo do Código de Ética da OAB.
+              Advocacia em Direito Previdenciário e Direito do Consumidor. Atendimento presencial em
+              Cuiabá e on-line em todo o Brasil.
             </p>
 
             <div className="pt-2">
@@ -130,7 +130,7 @@ export default function Footer({ onOpenCardModal }) {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <a
-                  href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de uma informação.')}
+                  href={getWhatsAppUrl(MENSAGEM_CONTATO)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-white/60 transition-colors duration-200 hover:text-white"
@@ -179,21 +179,15 @@ export default function Footer({ onOpenCardModal }) {
 
         {/* Aviso de conformidade */}
         <div className="mt-12 space-y-3 border-t border-white/10 pt-8 text-left">
-          <p className="flex gap-2 text-[11px] leading-relaxed text-white/45">
+          <p className="flex gap-2 text-[11px] leading-relaxed text-white/60">
             <ShieldCheck size={14} className="mt-0.5 shrink-0 text-white/35" aria-hidden="true" />
             <span>
-              <strong className="font-semibold text-white/60">
-                Aviso de Conformidade Deontológica (Provimento CFOAB nº 205/2021):
-              </strong>{' '}
-              Este site possui caráter meramente informativo e ilustrativo, destinado a prestar
-              esclarecimentos técnicos à sociedade e aos jurisdicionados. Não configura e não deve ser
-              interpretado como publicidade de captação ilícita, mercantilização de serviços ou promessa
-              infundada de ganho de causa. Todas as análises de casos e contratações dependem de avaliação
-              concreta de fatos e documentos por profissional habilitada.
+              Conteúdo informativo, em conformidade com o Provimento CFOAB nº 205/2021. Cada caso
+              depende de análise individual.
             </span>
           </p>
 
-          <div className="flex flex-col items-center justify-between gap-4 pt-2 text-[11px] text-white/45 sm:flex-row">
+          <div className="flex flex-col items-center justify-between gap-4 pt-2 text-[11px] text-white/60 sm:flex-row">
             <p>
               © {new Date().getFullYear()} Dra. Taís Freitas Advocacia • OAB/MT 23.396. Todos os direitos
               reservados.

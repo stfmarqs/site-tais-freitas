@@ -1,24 +1,7 @@
 import React from 'react';
-import { ShieldCheck, GraduationCap, HeartHandshake, MapPin, MessageCircle, CreditCard } from 'lucide-react';
+import { MessageCircle, CreditCard, ArrowRight } from 'lucide-react';
 import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
-
-const pilares = [
-  {
-    icone: ShieldCheck,
-    titulo: 'Segurança & Ética',
-    texto: 'Respeito irrestrito ao Código de Ética da OAB',
-  },
-  {
-    icone: HeartHandshake,
-    titulo: 'Humanização',
-    texto: 'Atendimento próximo e escuta atenta',
-  },
-  {
-    icone: MapPin,
-    titulo: 'Alcance Nacional',
-    texto: 'Atendimento 100% digital e presencial',
-  },
-];
+import { MENSAGEM_CONTATO } from '../content';
 
 const ficha = [
   { rotulo: 'Inscrição', valor: CONTACT_INFO.oab },
@@ -71,7 +54,7 @@ export default function AboutSection({ onOpenCardModal }) {
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de agendar uma conversa sobre o meu caso.')}
+                  href={getWhatsAppUrl(MENSAGEM_CONTATO)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-field bg-peach px-5 py-3 text-xs font-semibold text-charcoal-dark shadow-sm transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-md active:scale-[0.98]"
@@ -96,54 +79,34 @@ export default function AboutSection({ onOpenCardModal }) {
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
               <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
-                03 — Conheça a Advogada
+                03 — Sobre
               </span>
             </div>
 
             <h2 className="font-serif text-title font-semibold text-charcoal">
-              Rigor técnico aliado à <span className="text-terracotta">empatia</span> que a sua causa
-              merece.
+              Prazer, sou a Dra. Taís Freitas
             </h2>
 
-            <div className="max-w-[62ch] space-y-4 text-lede text-charcoal-muted">
-              <p>
-                A <strong className="font-semibold text-charcoal">Dra. Taís Freitas (OAB/MT 23.396)</strong>{' '}
-                construiu sua trajetória jurídica guiada pelo compromisso inegociável de transformar a
-                complexidade da legislação brasileira em soluções concretas para seus clientes.
-              </p>
-              <p>
-                Com formação aprofundada e <strong className="font-medium text-charcoal">pós-graduação em
-                Direito Previdenciário</strong>, atua de forma cirúrgica na análise de extratos
-                previdenciários (CNIS), cálculo de aposentadorias pelas novas regras e reversão de
-                indeferimentos arbitrários do INSS. Compreende que, por trás de cada benefício, existe o
-                esforço de uma vida inteira de trabalho e o sustento de famílias.
-              </p>
-              <p>
-                Na esfera do <strong className="font-medium text-charcoal">Direito do Consumidor</strong>,
-                defende passageiros contra abusos recorrentes de companhias aéreas (cancelamentos, atrasos
-                de voos e bagagens extraviadas) e protege o patrimônio de vítimas de fraudes digitais e
-                bancárias, exigindo a devida reparação civil e moral.
-              </p>
-            </div>
-
-            <ul className="grid grid-cols-1 gap-4 pt-3 sm:grid-cols-3">
-              {pilares.map(({ icone: Icone, titulo, texto }) => (
-                <li key={titulo} className="group rounded-surface border border-rule bg-white p-4 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-md">
-                  <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta transition-colors group-hover:bg-peach/20 group-hover:border-terracotta/40">
-                    <Icone size={16} aria-hidden="true" />
-                  </span>
-                  <p className="text-xs font-bold text-charcoal">{titulo}</p>
-                  <p className="mt-0.5 text-[11px] text-charcoal-muted">{texto}</p>
-                </li>
-              ))}
-            </ul>
-
-            <p className="flex items-start gap-2 pt-2 text-[11px] text-charcoal-muted/80">
-              <GraduationCap size={14} className="mt-0.5 shrink-0 text-terracotta" aria-hidden="true" />
-              <span>
-                Dedicação contínua ao Direito Previdenciário e à defesa do consumidor.
-              </span>
+            <p className="max-w-[62ch] text-lede text-charcoal-muted">
+              Sou advogada inscrita na OAB/MT sob o nº 23.396, com pós-graduação em Direito
+              Previdenciário. Atuo em Cuiabá e atendo clientes de todo o Brasil em causas do INSS e do
+              consumidor. Olho cada caso com atenção e explico com clareza o que dá para fazer.
             </p>
+
+            <a
+              href={getWhatsAppUrl(MENSAGEM_CONTATO)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-field bg-charcoal px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-charcoal-deep hover:shadow-md active:scale-[0.98]"
+            >
+              <MessageCircle size={16} className="text-peach" aria-hidden="true" />
+              <span>Fale comigo</span>
+              <ArrowRight
+                size={15}
+                className="text-white/60 transition-transform duration-200 ease-out-quint group-hover:translate-x-1 group-hover:text-white"
+                aria-hidden="true"
+              />
+            </a>
           </div>
 
         </div>
