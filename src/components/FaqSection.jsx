@@ -41,7 +41,7 @@ export default function FaqSection() {
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
-              05 — Perguntas Frequentes
+              04 — Perguntas Frequentes
             </span>
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
           </div>
@@ -63,7 +63,7 @@ export default function FaqSection() {
               <div
                 key={faq.q}
                 className={`overflow-hidden rounded-surface border transition-colors duration-200 ease-out-quint ${
-                  aberto ? 'border-charcoal bg-cream' : 'border-rule bg-white hover:border-rule-strong'
+                  aberto ? 'border-charcoal bg-cream shadow-xs' : 'border-rule bg-white hover:border-rule-strong hover:bg-cream/40'
                 }`}
               >
                 <h3>
@@ -109,20 +109,20 @@ export default function FaqSection() {
           })}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-surface border border-rule bg-cream p-6 text-center sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-surface border border-rule bg-cream p-6 text-center shadow-xs sm:flex-row">
           <div className="text-left text-xs text-charcoal-muted">
             <strong className="block font-semibold text-charcoal">
               Não encontrou a resposta para o seu caso?
             </strong>
-            Cada situação é analisada individualmente.
+            Cada situação é analisada individualmente com total transparência.
           </div>
           <a
             href={getWhatsAppUrl('Olá, Dra. Taís. Li o FAQ do site mas fiquei com uma dúvida sobre minha situação específica.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-2 rounded-field bg-charcoal px-5 py-2.5 text-xs font-semibold text-white transition-colors duration-200 ease-out-quint hover:bg-charcoal-deep"
+            className="group inline-flex shrink-0 items-center gap-2 rounded-field bg-charcoal px-5 py-3 text-xs font-semibold text-white shadow-sm transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-charcoal-deep hover:shadow-md active:scale-[0.98]"
           >
-            <MessageCircle size={15} className="text-peach" aria-hidden="true" />
+            <MessageCircle size={15} className="text-peach transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
             <span>Fazer Pergunta no WhatsApp</span>
           </a>
         </div>

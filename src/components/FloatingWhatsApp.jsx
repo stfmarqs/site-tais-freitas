@@ -57,9 +57,14 @@ export default function FloatingWhatsApp() {
         href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Acessei seu site e gostaria de uma orientação jurídica preliminar.')}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 rounded-full bg-charcoal px-4 py-3.5 text-white shadow-lg transition-colors duration-200 ease-out-quint hover:bg-charcoal-deep active:scale-95"
+        className="group relative flex items-center gap-2.5 rounded-full bg-charcoal px-4 py-3.5 text-white shadow-xl transition-all duration-200 ease-out-quint hover:scale-105 hover:bg-charcoal-deep active:scale-95 hover:shadow-2xl hover:shadow-charcoal/25"
         aria-label="Iniciar atendimento no WhatsApp"
       >
+        <span className="relative flex h-2.5 w-2.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
+        </span>
+
         <MessageCircle
           size={22}
           className="text-peach transition-transform duration-200 ease-out-quint group-hover:scale-110"

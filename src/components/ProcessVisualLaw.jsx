@@ -6,8 +6,8 @@ export default function ProcessVisualLaw() {
   const steps = [
     {
       number: "01",
-      title: "Triagem & Análise Documental",
-      subtitle: "Diagnóstico inicial sem juridiquês",
+      title: "Diagnóstico & Análise Documental",
+      subtitle: "Avaliação inicial sem juridiquês",
       description: "Você nos envia a documentação pelo WhatsApp ou e-mail (extrato do CNIS, carteiras de trabalho, laudos médicos, bilhetes de voo ou comprovantes bancários). Realizamos uma auditoria minuciosa para verificar os requisitos legais.",
       deliverables: ["Conferência de vínculos e contribuições", "Identificação de pendências", "Avaliação da urgência do caso"]
     },
@@ -36,7 +36,7 @@ export default function ProcessVisualLaw() {
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
-              03 — Metodologia Visual Law
+              02 — Metodologia &amp; Atendimento
             </span>
             <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
           </div>
@@ -53,12 +53,18 @@ export default function ProcessVisualLaw() {
           {steps.map((step, index) => (
             <div 
               key={step.number}
-              className="relative flex flex-col justify-between p-8 rounded-shell bg-cream border border-rule hover:border-rule-strong transition-colors group"
+              className="group relative flex flex-col justify-between p-8 rounded-shell bg-cream/70 border border-rule shadow-xs transition-all duration-300 ease-out-quint hover:-translate-y-2 hover:bg-white hover:border-peach/60 hover:shadow-xl hover:shadow-charcoal/5"
             >
+              {/* Borda de brilho sutil no topo do card no hover */}
+              <div
+                className="pointer-events-none absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-peach to-transparent opacity-0 transition-opacity duration-300 ease-out-quint group-hover:opacity-100"
+                aria-hidden="true"
+              />
+
               <div>
                 {/* Step Pill & Number */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="w-12 h-12 rounded-surface bg-charcoal text-white flex items-center justify-center font-serif text-xl font-bold group-hover:bg-charcoal-deep transition-colors">
+                  <span className="w-12 h-12 rounded-surface bg-charcoal text-white flex items-center justify-center font-serif text-xl font-bold shadow-xs transition-all duration-300 ease-out-quint group-hover:bg-charcoal-dark group-hover:scale-105 group-hover:shadow-md">
                     {step.number}
                   </span>
                   <span className="text-[10px] uppercase tracking-widest font-semibold text-terracotta">
@@ -67,7 +73,7 @@ export default function ProcessVisualLaw() {
                 </div>
 
                 {/* Step Titles */}
-                <h3 className="font-serif text-xl font-semibold text-charcoal mb-1">
+                <h3 className="font-serif text-xl font-semibold text-charcoal mb-1 transition-colors group-hover:text-charcoal-deep">
                   {step.title}
                 </h3>
                 <div className="text-xs font-medium text-terracotta mb-4">
@@ -80,25 +86,25 @@ export default function ProcessVisualLaw() {
                 </p>
 
                 {/* Deliverables */}
-                <div className="space-y-2 pt-4 border-t border-rule">
+                <div className="space-y-2.5 pt-4 border-t border-rule/80">
                   {step.deliverables.map((d, dIdx) => (
-                    <div key={dIdx} className="flex items-center gap-2 text-xs text-charcoal-muted">
-                      <CheckCircle2 size={15} className="text-terracotta shrink-0" />
+                    <div key={dIdx} className="flex items-center gap-2.5 text-xs text-charcoal-muted">
+                      <CheckCircle2 size={15} className="text-terracotta shrink-0 transition-transform duration-200 group-hover:scale-110" />
                       <span>{d}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-rule">
+              <div className="mt-8 pt-4 border-t border-rule/80">
                 <a
                   href={getWhatsAppUrl(`Olá, Dra. Taís. Gostaria de iniciar a etapa ${step.number} (${step.title}) para analisar meu caso.`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal hover:text-terracotta transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal transition-colors duration-200 group-hover:text-terracotta"
                 >
                   <span>Iniciar esta etapa</span>
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={14} className="transition-transform duration-200 ease-out-quint group-hover:translate-x-1" />
                 </a>
               </div>
 
@@ -110,7 +116,7 @@ export default function ProcessVisualLaw() {
             Substitui o antigo quadro "Advocacia Tradicional ✕ vs Dra. Taís ✓":
             comparação que deprecia outros profissionais é vedada pelo Código de
             Ética da OAB. Os fatos sobre o atendimento seguem aqui, sem o contraste. */}
-        <div className="mt-16 p-8 rounded-shell bg-cream border border-rule">
+        <div className="mt-16 p-8 rounded-shell bg-cream border border-rule shadow-xs">
           <h4 className="font-serif text-xl font-semibold text-charcoal text-center mb-2">
             Como o atendimento funciona na prática
           </h4>
@@ -133,12 +139,12 @@ export default function ProcessVisualLaw() {
                 texto: 'Procuração e contrato por assinatura eletrônica com validade jurídica (ICP-Brasil/Gov.br).',
               },
             ].map((item) => (
-              <li key={item.titulo} className="p-6 rounded-surface bg-white border border-rule text-left">
-                <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta">
+              <li key={item.titulo} className="group p-6 rounded-surface bg-white border border-rule text-left shadow-xs transition-all duration-200 hover:-translate-y-1 hover:border-rule-strong hover:shadow-sm">
+                <span className="mb-3 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta transition-colors group-hover:border-terracotta/40 group-hover:bg-peach/20">
                   <CheckCircle2 size={16} aria-hidden="true" />
                 </span>
                 <p className="text-xs font-bold text-charcoal">{item.titulo}</p>
-                <p className="mt-1 text-xs leading-relaxed text-charcoal-muted">{item.texto}</p>
+                <p className="mt-1 text-[11px] leading-relaxed text-charcoal-muted">{item.texto}</p>
               </li>
             ))}
           </ul>

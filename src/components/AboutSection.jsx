@@ -40,7 +40,7 @@ export default function AboutSection({ onOpenCardModal }) {
           <div className="lg:col-span-5">
             <div className="on-dark rounded-shell bg-charcoal-dark p-8 text-white">
               <img
-                src="/assets/monogram-cream-96.webp"
+                src="./assets/monogram-cream-96.webp"
                 alt=""
                 width={96}
                 height={78}
@@ -74,7 +74,7 @@ export default function AboutSection({ onOpenCardModal }) {
                   href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de agendar uma conversa sobre o meu caso.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-field bg-peach px-5 py-3 text-xs font-semibold text-charcoal-dark transition-colors duration-200 ease-out-quint hover:bg-peach-light"
+                  className="inline-flex items-center gap-2 rounded-field bg-peach px-5 py-3 text-xs font-semibold text-charcoal-dark shadow-sm transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-md active:scale-[0.98]"
                 >
                   <MessageCircle size={16} aria-hidden="true" />
                   <span>Conversar com a Dra. Taís</span>
@@ -83,7 +83,7 @@ export default function AboutSection({ onOpenCardModal }) {
                 <button
                   type="button"
                   onClick={onOpenCardModal}
-                  className="inline-flex items-center gap-2 rounded-field border border-white/20 bg-white/10 px-4 py-3 text-xs font-semibold text-white transition-colors duration-200 ease-out-quint hover:bg-white/20"
+                  className="inline-flex items-center gap-2 rounded-field border border-white/20 bg-white/10 px-4 py-3 text-xs font-semibold text-white transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-white/20 active:scale-[0.98]"
                 >
                   <CreditCard size={15} className="text-peach" aria-hidden="true" />
                   <span>Salvar contato</span>
@@ -96,7 +96,7 @@ export default function AboutSection({ onOpenCardModal }) {
             <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-terracotta" aria-hidden="true" />
               <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal-muted">
-                04 — Conheça a Advogada
+                03 — Conheça a Advogada
               </span>
             </div>
 
@@ -128,8 +128,8 @@ export default function AboutSection({ onOpenCardModal }) {
 
             <ul className="grid grid-cols-1 gap-4 pt-3 sm:grid-cols-3">
               {pilares.map(({ icone: Icone, titulo, texto }) => (
-                <li key={titulo} className="rounded-surface border border-rule bg-white p-4">
-                  <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta">
+                <li key={titulo} className="group rounded-surface border border-rule bg-white p-4 shadow-xs transition-all duration-200 hover:-translate-y-1 hover:border-terracotta/40 hover:shadow-md">
+                  <span className="mb-2 flex h-8 w-8 items-center justify-center rounded-field border border-rule bg-cream text-terracotta transition-colors group-hover:bg-peach/20 group-hover:border-terracotta/40">
                     <Icone size={16} aria-hidden="true" />
                   </span>
                   <p className="text-xs font-bold text-charcoal">{titulo}</p>

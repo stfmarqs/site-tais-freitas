@@ -5,7 +5,6 @@ import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
 const navLinks = [
   { label: 'Especialidades', href: '#especialidades' },
   { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Simulação de Caso', href: '#triagem' },
   { label: 'Sobre a Advogada', href: '#sobre' },
   { label: 'Dúvidas Frequentes', href: '#faq' },
 ];
@@ -60,7 +59,7 @@ export default function Header({ onOpenCardModal }) {
           <a href="#" className="group flex shrink-0 items-center gap-3">
             <span className={`flex h-10 w-10 items-center justify-center rounded-field p-1.5 transition-colors duration-300 ${solido ? 'bg-charcoal' : 'bg-white/10 ring-1 ring-white/15'}`}>
               <img
-                src="/assets/monogram-cream-96.webp"
+                src="./assets/monogram-cream-96.webp"
                 alt=""
                 width={96}
                 height={78}
@@ -110,11 +109,11 @@ export default function Header({ onOpenCardModal }) {
               href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Acessei seu site e gostaria de orientação jurídica sobre o meu caso.')}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group inline-flex items-center gap-2 rounded-field px-4 py-2 text-xs font-semibold transition-colors duration-300 ease-out-quint ${solido ? 'bg-charcoal text-white hover:bg-charcoal-deep' : 'bg-peach text-charcoal-dark hover:bg-peach-light'}`}
+              className={`group inline-flex items-center gap-2 rounded-field px-4 py-2 text-xs font-semibold shadow-sm transition-all duration-300 ease-out-quint hover:scale-[1.03] active:scale-[0.98] ${solido ? 'bg-charcoal text-white hover:bg-charcoal-deep hover:shadow-md' : 'bg-peach text-charcoal-dark hover:bg-peach-light hover:shadow-peach/20'}`}
             >
-              <MessageCircle size={14} className={solido ? 'text-peach' : 'text-charcoal-dark/60'} aria-hidden="true" />
+              <MessageCircle size={14} className={solido ? 'text-peach' : 'text-charcoal-dark/70'} aria-hidden="true" />
               <span>Consultar no WhatsApp</span>
-              <ArrowUpRight size={13} className={`transition-colors duration-200 ${solido ? 'text-white/50 group-hover:text-white' : 'text-charcoal-dark/40'}`} aria-hidden="true" />
+              <ArrowUpRight size={13} className={`transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${solido ? 'text-white/60 group-hover:text-white' : 'text-charcoal-dark/50'}`} aria-hidden="true" />
             </a>
           </div>
 

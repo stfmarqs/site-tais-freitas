@@ -126,7 +126,7 @@ export default function DigitalCardModal({ isOpen, onClose }) {
       {/* Faixa do cabeçalho */}
       <div className="relative overflow-hidden bg-charcoal px-6 pb-14 pt-8 text-white">
         <img
-          src="/assets/monogram-cream-320.webp"
+          src="./assets/monogram-cream-320.webp"
           alt=""
           width={320}
           height={260}
@@ -162,7 +162,7 @@ export default function DigitalCardModal({ isOpen, onClose }) {
       <div className="relative -mt-10 flex items-end justify-between px-6">
         <span className="block h-20 w-20 overflow-hidden rounded-surface bg-warm-gray ring-4 ring-white">
           <img
-            src="/assets/tais-portrait-160.webp"
+            src="./assets/tais-portrait-160.webp"
             alt="Dra. Taís Freitas"
             width={160}
             height={160}

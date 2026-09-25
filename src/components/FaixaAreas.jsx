@@ -1,43 +1,49 @@
 import React from 'react';
 
 const termos = [
-  'Aposentadoria',
-  'BPC/LOAS',
-  'Auxílio-Doença',
+  'Aposentadoria Urbana & Rural',
+  'BPC / LOAS',
+  'Benefício Negado no INSS',
+  'Auxílio-Doença & Incapacidade',
   'Pensão por Morte',
   'Revisão de Benefício',
-  'CNIS',
-  'Auxílio-Acidente',
-  'Direito Aéreo',
-  'Fraude Bancária',
+  'Planejamento Previdenciário',
+  'Acertos de CNIS',
+  'Direito Aéreo & Voos',
+  'Golpes do Pix & Fraudes',
   'Negativação Indevida',
 ];
 
-/**
- * Faixa de áreas entre seções. Dá o corte de ritmo entre um bloco claro e o
- * próximo, e lista os termos que a pessoa costuma digitar na busca.
- *
- * Estática de propósito. Texto em movimento contínuo é difícil de ler para o
- * público previdenciário, que é majoritariamente 60+, e entra na lista de
- * gatilhos vestibulares.
- */
 export default function FaixaAreas() {
   return (
-    <div className="border-y border-charcoal-deep bg-charcoal-dark py-4">
-      <ul className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-4 sm:px-6 lg:px-8">
-        {termos.map((termo, i) => (
-          <React.Fragment key={termo}>
-            {i > 0 && (
-              <li aria-hidden="true" className="text-[10px] text-peach/50">
-                ✦
-              </li>
-            )}
-            <li className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/55">
+    <div
+      className="relative overflow-hidden border-y border-white/10 bg-charcoal-dark py-4 text-white"
+      aria-label="Áreas de atuação em destaque"
+    >
+      {/* Máscaras de gradiente nas laterais para entrada/saída suave */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-charcoal-dark to-transparent sm:w-28"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-charcoal-dark to-transparent sm:w-28"
+        aria-hidden="true"
+      />
+
+      <div className="animate-marquee flex items-center">
+        {/* Renderizado duas vezes para emendar sem pulo */}
+        {[...termos, ...termos].map((termo, i) => (
+          <div key={`${termo}-${i}`} className="flex shrink-0 items-center">
+            <span className="mx-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/70 sm:mx-6 sm:text-xs">
               {termo}
-            </li>
-          </React.Fragment>
+            </span>
+            <span className="text-[10px] text-peach/60" aria-hidden="true">
+              ✦
+            </span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
+

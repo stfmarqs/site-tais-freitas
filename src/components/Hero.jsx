@@ -18,8 +18,8 @@ export default function Hero({ onOpenCardModal }) {
           ocupar a metade direita e o texto fica sobre a sobreposição. */}
       <div className="relative h-[42svh] min-h-[280px] w-full lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[56%]">
         <img
-          src="/assets/tais-portrait-1080.webp"
-          srcSet="/assets/tais-portrait-420.webp 420w, /assets/tais-portrait-840.webp 840w, /assets/tais-portrait-1080.webp 1080w"
+          src="./assets/tais-portrait-1080.webp"
+          srcSet="./assets/tais-portrait-420.webp 420w, ./assets/tais-portrait-840.webp 840w, ./assets/tais-portrait-1080.webp 1080w"
           sizes="(min-width: 1024px) 56vw, 100vw"
           width={1080}
           height={1080}
@@ -73,41 +73,40 @@ export default function Hero({ onOpenCardModal }) {
 
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             <a
-              href={getWhatsAppUrl('Olá, Dra. Taís. Gostaria de entender o enquadramento do meu caso no WhatsApp.')}
+              href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Gostaria de entender o enquadramento do meu caso.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-3 rounded-field bg-peach px-6 py-4 text-sm font-semibold text-charcoal-dark transition-colors duration-200 ease-out-quint hover:bg-peach-light active:scale-[0.99]"
+              className="group inline-flex items-center justify-center gap-3 rounded-field bg-peach px-6 py-4 text-sm font-semibold text-charcoal-dark shadow-md shadow-peach/10 transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-lg hover:shadow-peach/20 active:scale-[0.98]"
             >
-              <MessageCircle size={18} aria-hidden="true" />
+              <MessageCircle size={18} className="transition-transform duration-200 ease-out-quint group-hover:scale-110" aria-hidden="true" />
               <span>Analisar Meu Caso no WhatsApp</span>
               <ArrowRight
                 size={16}
-                className="text-charcoal-dark/50 transition-transform duration-200 ease-out-quint group-hover:translate-x-1"
+                className="text-charcoal-dark/60 transition-transform duration-200 ease-out-quint group-hover:translate-x-1"
                 aria-hidden="true"
               />
             </a>
 
             <a
-              href="#triagem"
-              className="inline-flex items-center justify-center gap-2 rounded-field border border-white/20 bg-white/10 px-5 py-4 text-sm font-medium text-white transition-colors duration-200 ease-out-quint hover:bg-white/15"
+              href="#especialidades"
+              className="group inline-flex items-center justify-center gap-2 rounded-field border border-white/20 bg-white/10 px-5 py-4 text-sm font-medium text-white backdrop-blur-xs transition-all duration-200 ease-out-quint hover:scale-[1.02] hover:border-white/35 hover:bg-white/15 active:scale-[0.98]"
             >
-              <Sparkles size={16} className="text-peach" aria-hidden="true" />
-              <span>Simulador &amp; Triagem Prévia</span>
+              <Sparkles size={16} className="text-peach transition-transform duration-200 ease-out-quint group-hover:rotate-12" aria-hidden="true" />
+              <span>Ver Especialidades</span>
             </a>
 
             <button
               type="button"
               onClick={onOpenCardModal}
-              className="inline-flex items-center justify-center gap-2 rounded-field px-4 py-4 text-sm font-medium text-white/70 transition-colors duration-200 ease-out-quint hover:bg-white/10 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-field px-4 py-4 text-sm font-medium text-white/70 transition-all duration-200 ease-out-quint hover:bg-white/10 hover:text-white active:scale-[0.98]"
             >
-              <CreditCard size={16} aria-hidden="true" />
+              <CreditCard size={16} className="text-peach/80" aria-hidden="true" />
               <span>Cartão Digital</span>
             </button>
           </div>
 
-          <p className="mt-6 text-[11px] text-white/40">
-            * A triagem é de caráter técnico-orientativo, sem promessa de resultado, respeitando as
-            normas da OAB.
+          <p className="mt-6 text-[11px] text-white/45">
+            * Atendimento consultivo técnico-orientativo, sem promessa de resultado, respeitando as normas éticas da OAB.
           </p>
         </div>
       </div>

@@ -6,7 +6,6 @@ import { CONTACT_INFO, getWhatsAppUrl } from '../utils/vcard';
 const navegacao = [
   { label: 'Áreas de Atuação', href: '#especialidades' },
   { label: 'Como Funciona o Atendimento', href: '#como-funciona' },
-  { label: 'Simulador de Enquadramento', href: '#triagem' },
   { label: 'Sobre a Dra. Taís Freitas', href: '#sobre' },
   { label: 'Perguntas Frequentes', href: '#faq' },
 ];
@@ -18,7 +17,7 @@ export default function Footer({ onOpenCardModal }) {
       {/* Faixa de chamada */}
       <div className="relative border-b border-white/10 px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <img
-          src="/assets/monogram-cream-320.webp"
+          src="./assets/monogram-cream-320.webp"
           alt=""
           width={320}
           height={260}
@@ -49,16 +48,16 @@ export default function Footer({ onOpenCardModal }) {
               href={getWhatsAppUrl('Olá, Dra. Taís Freitas. Gostaria de agendar uma consulta preliminar sobre o meu caso.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2.5 rounded-field bg-peach px-7 py-4 text-xs font-bold uppercase tracking-[0.1em] text-charcoal-dark transition-colors duration-200 ease-out-quint hover:bg-peach-light sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-field bg-peach px-7 py-4 text-xs font-bold uppercase tracking-[0.1em] text-charcoal-dark shadow-md shadow-peach/10 transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-lg hover:shadow-peach/20 active:scale-[0.98] sm:w-auto"
             >
-              <MessageCircle size={18} aria-hidden="true" />
+              <MessageCircle size={18} className="transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
               <span>Falar no WhatsApp</span>
             </a>
 
             <button
               type="button"
               onClick={onOpenCardModal}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-field border border-white/15 bg-white/10 px-6 py-4 text-xs font-medium text-white transition-colors duration-200 ease-out-quint hover:bg-white/15 sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-field border border-white/20 bg-white/10 px-6 py-4 text-xs font-medium text-white transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-white/20 active:scale-[0.98] sm:w-auto"
             >
               <CreditCard size={16} className="text-peach" aria-hidden="true" />
               <span>Abrir Cartão Digital</span>
@@ -75,7 +74,7 @@ export default function Footer({ onOpenCardModal }) {
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-field border border-white/10 bg-white/10 p-1.5">
                 <img
-                  src="/assets/monogram-cream-96.webp"
+                  src="./assets/monogram-cream-96.webp"
                   alt=""
                   width={96}
                   height={78}

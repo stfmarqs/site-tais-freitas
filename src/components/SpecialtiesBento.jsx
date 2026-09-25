@@ -115,15 +115,15 @@ export default function SpecialtiesBento() {
 
           {/* OriginKit / Skiper UI Style Tab Switcher */}
           <div className="pt-4 flex justify-center">
-            <div className="inline-flex p-1.5 rounded-surface bg-cream border border-rule">
+            <div className="inline-flex p-1.5 rounded-surface bg-cream border border-rule shadow-xs">
               <button
                 type="button"
                 aria-pressed={activeTab === 'previdenciario'}
                 onClick={() => setActiveTab('previdenciario')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-all duration-200 ease-out-quint cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${
                   activeTab === 'previdenciario'
-                    ? 'bg-charcoal text-white'
-                    : 'text-charcoal-muted hover:text-charcoal'
+                    ? 'bg-charcoal text-white shadow-sm'
+                    : 'text-charcoal-muted hover:text-charcoal hover:bg-white/60'
                 }`}
               >
                 <Shield size={16} className={activeTab === 'previdenciario' ? 'text-peach' : 'text-charcoal-muted'} />
@@ -134,14 +134,14 @@ export default function SpecialtiesBento() {
                 type="button"
                 aria-pressed={activeTab === 'consumidor'}
                 onClick={() => setActiveTab('consumidor')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-field text-xs sm:text-sm font-semibold transition-all duration-200 ease-out-quint cursor-pointer hover:scale-[1.02] active:scale-[0.98] ${
                   activeTab === 'consumidor'
-                    ? 'bg-charcoal text-white'
-                    : 'text-charcoal-muted hover:text-charcoal'
+                    ? 'bg-charcoal text-white shadow-sm'
+                    : 'text-charcoal-muted hover:text-charcoal hover:bg-white/60'
                 }`}
               >
                 <Plane size={16} className={activeTab === 'consumidor' ? 'text-peach' : 'text-charcoal-muted'} />
-                <span>Direito do Consumidor & Bancário</span>
+                <span>Direito do Consumidor &amp; Bancário</span>
               </button>
             </div>
           </div>
@@ -153,21 +153,27 @@ export default function SpecialtiesBento() {
           {currentCards.map((card, idx) => (
             <div
               key={card.title}
-              className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-shell bg-cream border border-rule hover:border-rule-strong hover:bg-white transition-colors duration-300"
+              className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-shell bg-cream/80 border border-rule shadow-xs transition-all duration-300 ease-out-quint hover:-translate-y-2 hover:bg-white hover:border-peach/60 hover:shadow-xl hover:shadow-charcoal/5"
             >
+              {/* Borda de brilho sutil no topo do card no hover */}
+              <div
+                className="pointer-events-none absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-transparent via-peach to-transparent opacity-0 transition-opacity duration-300 ease-out-quint group-hover:opacity-100"
+                aria-hidden="true"
+              />
+
               <div>
                 {/* Top Badge & Number */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-peach/20 text-terracotta-dark border border-peach/30">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-peach/20 text-terracotta-dark border border-peach/30 transition-colors group-hover:bg-peach/30 group-hover:border-peach/50">
                     {card.badge}
                   </span>
-                  <span className="text-[11px] font-mono text-charcoal-muted font-medium">
+                  <span className="text-[11px] font-mono text-charcoal-muted/70 font-medium group-hover:text-charcoal transition-colors">
                     0{idx + 1}
                   </span>
                 </div>
 
                 {/* Card Title */}
-                <h3 className="font-serif text-xl font-semibold text-charcoal tracking-tight mb-3 group-hover:text-charcoal-deep">
+                <h3 className="font-serif text-xl font-semibold text-charcoal tracking-tight mb-3 transition-colors duration-200 group-hover:text-charcoal-deep">
                   {card.title}
                 </h3>
 
@@ -177,13 +183,13 @@ export default function SpecialtiesBento() {
                 </p>
 
                 {/* Key Situations (Bullet list) */}
-                <div className="space-y-2 pt-2 pb-6 border-t border-rule">
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-charcoal-muted">
+                <div className="space-y-2 pt-2 pb-6 border-t border-rule/80">
+                  <div className="text-[10px] uppercase tracking-wider font-semibold text-charcoal-muted/80">
                     Principais Situações:
                   </div>
                   {card.situations.map((sit, sIdx) => (
                     <div key={sIdx} className="flex items-start gap-2 text-xs text-charcoal-muted">
-                      <Check size={14} className="text-terracotta shrink-0 mt-0.5" />
+                      <Check size={14} className="text-terracotta shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
                       <span>{sit}</span>
                     </div>
                   ))}
@@ -191,15 +197,15 @@ export default function SpecialtiesBento() {
               </div>
 
               {/* Card Footer Action */}
-              <div className="pt-4 border-t border-rule">
+              <div className="pt-4 border-t border-rule/80">
                 <a
                   href={getWhatsAppUrl(card.whatsappMsg)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-field text-xs font-semibold text-charcoal bg-white border border-rule group-hover:bg-charcoal group-hover:text-white group-hover:border-charcoal transition-colors"
+                  className="inline-flex items-center justify-between w-full px-4 py-3 rounded-field text-xs font-semibold text-charcoal bg-white border border-rule shadow-xs transition-all duration-300 ease-out-quint group-hover:bg-charcoal group-hover:text-white group-hover:border-charcoal group-hover:shadow-md"
                 >
                   <span>{card.ctaText}</span>
-                  <ArrowUpRight size={14} className="text-charcoal-muted group-hover:text-peach transition-colors" />
+                  <ArrowUpRight size={14} className="text-charcoal-muted transition-transform duration-200 ease-out-quint group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-peach" />
                 </a>
               </div>
 
@@ -208,15 +214,15 @@ export default function SpecialtiesBento() {
         </div>
 
         {/* Bottom Callout */}
-        <div className="mt-12 p-6 sm:p-8 rounded-shell bg-charcoal text-white flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-left space-y-1">
+        <div className="mt-12 p-6 sm:p-8 rounded-shell bg-charcoal text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-charcoal/10 transition-transform duration-300 hover:shadow-xl">
+          <div className="text-left space-y-1.5">
             <div className="text-xs uppercase tracking-widest text-peach font-semibold">
               Dúvida sobre outra situação?
             </div>
             <h4 className="font-serif text-lg sm:text-xl font-medium">
               Cada caso possui particularidades que merecem análise individualizada.
             </h4>
-            <p className="text-xs text-rule-strong">
+            <p className="text-xs text-white/70">
               Entre em contato direto pelo WhatsApp para um direcionamento preliminar seguro.
             </p>
           </div>
@@ -225,10 +231,10 @@ export default function SpecialtiesBento() {
             href={getWhatsAppUrl("Olá, Dra. Taís. Tenho uma dúvida jurídica e gostaria de saber se meu caso se enquadra na sua área de atuação.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-field bg-cream text-charcoal text-xs font-semibold hover:bg-peach transition-colors shrink-0 cursor-pointer"
+            className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-field bg-peach text-charcoal-dark text-xs font-semibold shadow-md transition-all duration-200 ease-out-quint hover:scale-[1.03] hover:bg-peach-light hover:shadow-lg hover:shadow-peach/20 active:scale-[0.98] shrink-0 cursor-pointer"
           >
             <span>Tirar Dúvida no WhatsApp</span>
-            <ArrowUpRight size={15} />
+            <ArrowUpRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
